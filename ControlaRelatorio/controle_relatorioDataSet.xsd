@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="controle_relatorioDataSet" targetNamespace="http://tempuri.org/controle_relatorioDataSet.xsd" xmlns:mstns="http://tempuri.org/controle_relatorioDataSet.xsd" xmlns="http://tempuri.org/controle_relatorioDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="controle_relatorioConnectionString2" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="controle_relatorioConnectionString2 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ControlaRelatorio.Properties.Settings.GlobalReference.Default.controle_relatorioConnectionString2" Provider="MySql.Data.MySqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="relatorioTableAdapter" GeneratorDataComponentClassName="relatorioTableAdapter" Name="relatorio" UserDataComponentName="relatorioTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="controle_relatorioConnectionString2 (Settings)" DbObjectName="controle_relatorio.relatorio" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `Id_relatorio`, `requisito`, `requisito_correcao`, `cliente`, `cliente_atualizado`, `atendente`, `pendente_status`, `observacao`, `dtainclusao`, `requisito_atualizacao`, `observacaoBaixa` FROM `relatorio`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="controle_relatorioDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="controle_relatorioDataSet" msprop:Generator_UserDSName="controle_relatorioDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="relatorio" msprop:Generator_TableClassName="relatorioDataTable" msprop:Generator_TableVarName="tablerelatorio" msprop:Generator_TablePropName="relatorio" msprop:Generator_RowDeletingName="relatorioRowDeleting" msprop:Generator_RowChangingName="relatorioRowChanging" msprop:Generator_RowEvHandlerName="relatorioRowChangeEventHandler" msprop:Generator_RowDeletedName="relatorioRowDeleted" msprop:Generator_UserTableName="relatorio" msprop:Generator_RowChangedName="relatorioRowChanged" msprop:Generator_RowEvArgName="relatorioRowChangeEvent" msprop:Generator_RowClassName="relatorioRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
