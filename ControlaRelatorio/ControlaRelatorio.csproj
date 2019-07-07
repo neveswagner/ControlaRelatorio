@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icons8-informação-de-sistema-96.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="BouncyCastle.Crypto, Version=1.8.3.0, Culture=neutral, PublicKeyToken=0e99375e54769942" />
     <Reference Include="Chart.Mvc, Version=1.0.0.2, Culture=neutral, processorArchitecture=MSIL">
@@ -147,6 +150,12 @@
     <Compile Include="Forms\FrmManutencaoRelatorio.Designer.cs">
       <DependentUpon>FrmManutencaoRelatorio.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FrmPesquisaRelatorio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmPesquisaRelatorio.Designer.cs">
+      <DependentUpon>FrmPesquisaRelatorio.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="sislogDataSet.Designer.cs">
@@ -168,6 +177,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmManutencaoRelatorio.resx">
       <DependentUpon>FrmManutencaoRelatorio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmPesquisaRelatorio.resx">
+      <DependentUpon>FrmPesquisaRelatorio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -240,6 +252,13 @@
     <None Include="Resources\icons8-downloads-48.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="icons8-informação-de-sistema-96.ico" />
+    <None Include="Resources\icons8-pesquisar-48.png" />
+    <None Include="Resources\icons8-pesquisar-20.png" />
+    <None Include="Resources\icons8-cardápio-filled-50 %281%29.png" />
+    <None Include="Resources\icons8-cardápio-20.png" />
+    <None Include="Resources\icons8-cardápio-32.png" />
+    <None Include="Resources\icons8-inserir-tabela-filled-32.png" />
     <Content Include="Scripts\Chart.js" />
   </ItemGroup>
   <ItemGroup>

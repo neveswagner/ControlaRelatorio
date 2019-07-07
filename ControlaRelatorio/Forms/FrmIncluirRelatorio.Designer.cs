@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmIncluirRelatorio));
             this.requisitoTbx = new System.Windows.Forms.TextBox();
             this.requisitoLbl = new System.Windows.Forms.Label();
             this.clienteLbl = new System.Windows.Forms.Label();
@@ -287,6 +288,7 @@
             this.Controls.Add(this.requisitoLbl);
             this.Controls.Add(this.requisitoTbx);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.Name = "FrmIncluirRelatorio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

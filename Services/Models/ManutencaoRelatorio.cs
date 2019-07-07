@@ -32,6 +32,7 @@ namespace Services.Models
 
         public String QuantidadeAtendente { get; set; }
 
+        public String DiasCountAtendente { get; set; }
 
 
     }

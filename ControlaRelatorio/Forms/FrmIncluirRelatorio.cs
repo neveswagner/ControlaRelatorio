@@ -142,7 +142,9 @@ namespace ControlaRelatorio.Forms
 
         private void FrmIncluirRelatorio_KeyPress(object sender, KeyPressEventArgs e)
         {
-            
+            if (e.KeyChar == 27)
+
+                this.Close();
         }
 
         private void FrmIncluirRelatorio_KeyUp(object sender, KeyEventArgs e)

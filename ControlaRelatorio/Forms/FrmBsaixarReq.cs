@@ -114,9 +114,10 @@ namespace ControlaRelatorio.Forms
                 MessageBox.Show("Campo observacao nao pode ser vazio");
                 this.obsBaixaTbx.Focus();
             }
-
+            
             if (ValidadoSNaoCkb.Checked == true)
             {
+                
                 if (String.IsNullOrEmpty(requisitoCorrecaoTbx.Text))
                 {
                     MessageBox.Show("Campo requisito de correcao nao pode ser vazio");
@@ -124,11 +125,33 @@ namespace ControlaRelatorio.Forms
                 }
                 else if (!Regex.IsMatch(requisitoCorrecaoTbx.Text, @"^[0-9]+$"))
                 {
-                    MessageBox.Show("Campo requisito de correcao deve conter somente Numeros");
-                    this.requisitoCorrecaoTbx.Focus();
+                   MessageBox.Show("Campo requisito de correcao deve conter somente Numeros");
+                  this.requisitoCorrecaoTbx.Focus();
 
                 }
+             else
+            {
+
+
+                m.Requisito = requisitoTbx.Text;
+                m.DtaInclusao = Convert.ToDateTime(dtaInclusaoDtm.Text);
+                m.Cliente = clientTbx.Text;
+                m.Atendente = atendenteTbx.Text;
+                m.Observacao = ObservacaoTbx.Text;
+                m.Id_relatorio = Convert.ToInt32(id_relatorioTbx.Text);
+                m.RequisitoCorrecao = requisitoCorrecaoTbx.Text;
+                m.ObservacaoBaixa = obsBaixaTbx.Text;
+
+
+                dao.BaixarRelatorio(m);
+
+                this.Close();
+
+                frmmanutencaorelatorio.AtualizaGrids();
+            } 
+
             }
+              
 
             else
             {
@@ -154,7 +177,9 @@ namespace ControlaRelatorio.Forms
 
         private void FrmBaixarReq_KeyPress(object sender, KeyPressEventArgs e)
         {
-           
+            if (e.KeyChar == 27)
+
+                this.Close();
         }
 
         private void FrmBaixarReq_KeyDown(object sender, KeyEventArgs e)
@@ -169,6 +194,8 @@ namespace ControlaRelatorio.Forms
 
 
             }
+
+
 
 
 

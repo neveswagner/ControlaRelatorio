@@ -72,6 +72,8 @@ namespace ControlaRelatorio.Forms
                 m.Id_relatorio = Convert.ToInt32(id_relatorioTbx.Text);
                 m.PendenteStatus = validadoCbx.Text;
                 m.ClienteAtualizado = clienteAtualizadoCbx.Text;
+                m.RequisitoAtualizacao = requisitoAtualizacaoTbx.Text;
+                m.RequisitoCorrecao =  requisitoCorrecaoTbx.Text;
 
                 dao.EditarRelatorio(m);
                 MessageBox.Show("Requisito Editado Com Sucesso !");
@@ -96,6 +98,18 @@ namespace ControlaRelatorio.Forms
             }
 
 
+        }
+
+        private void requisitoCorrecaoTbx_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FrmEditarRelatorio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 27)
+
+                this.Close();
         }
     }
 }

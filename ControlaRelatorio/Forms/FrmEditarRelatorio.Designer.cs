@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEditarRelatorio));
             this.requisitoAtualizacaoLbl = new System.Windows.Forms.Label();
             this.requisitoAtualizacaoTbx = new System.Windows.Forms.TextBox();
             this.requisitoCorrecaoLbl = new System.Windows.Forms.Label();
@@ -86,6 +87,7 @@
             this.requisitoCorrecaoTbx.Name = "requisitoCorrecaoTbx";
             this.requisitoCorrecaoTbx.Size = new System.Drawing.Size(100, 20);
             this.requisitoCorrecaoTbx.TabIndex = 7;
+            this.requisitoCorrecaoTbx.TextChanged += new System.EventHandler(this.requisitoCorrecaoTbx_TextChanged);
             // 
             // label1
             // 
@@ -286,12 +288,14 @@
             this.Controls.Add(this.requisitoLbl);
             this.Controls.Add(this.requisitoTbx);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.Name = "FrmEditarRelatorio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Editar Relatorio";
             this.Load += new System.EventHandler(this.FrmEditarRelatorio_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmEditarRelatorio_KeyDown);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FrmEditarRelatorio_KeyPress);
             this.ResumeLayout(false);
             this.PerformLayout();
 

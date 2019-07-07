@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmEscolhaGrid));
             this.baixarGridBtn = new System.Windows.Forms.Button();
             this.editarRelatorioBtn = new System.Windows.Forms.Button();
+            this.MsgreqBaixadoLbl = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // baixarGridBtn
@@ -72,19 +74,38 @@
             this.editarRelatorioBtn.UseVisualStyleBackColor = false;
             this.editarRelatorioBtn.Click += new System.EventHandler(this.editarRelatorioBtn_Click);
             // 
+            // MsgreqBaixadoLbl
+            // 
+            this.MsgreqBaixadoLbl.AutoSize = true;
+            this.MsgreqBaixadoLbl.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MsgreqBaixadoLbl.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MsgreqBaixadoLbl.ForeColor = System.Drawing.Color.Red;
+            this.MsgreqBaixadoLbl.Location = new System.Drawing.Point(101, 5);
+            this.MsgreqBaixadoLbl.Name = "MsgreqBaixadoLbl";
+            this.MsgreqBaixadoLbl.Size = new System.Drawing.Size(163, 23);
+            this.MsgreqBaixadoLbl.TabIndex = 31;
+            this.MsgreqBaixadoLbl.Text = "Requisito já Baixado ";
+            this.MsgreqBaixadoLbl.Visible = false;
+            // 
             // FrmEscolhaGrid
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
             this.ClientSize = new System.Drawing.Size(334, 102);
+            this.Controls.Add(this.MsgreqBaixadoLbl);
             this.Controls.Add(this.baixarGridBtn);
             this.Controls.Add(this.editarRelatorioBtn);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.Name = "FrmEscolhaGrid";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmEscolhaGrid_FormClosing);
             this.Load += new System.EventHandler(this.FrmEscolhaGrid_Load);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FrmEscolhaGrid_KeyPress);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -92,5 +113,6 @@
 
         public System.Windows.Forms.Button editarRelatorioBtn;
         public System.Windows.Forms.Button baixarGridBtn;
+        public System.Windows.Forms.Label MsgreqBaixadoLbl;
     }
 }

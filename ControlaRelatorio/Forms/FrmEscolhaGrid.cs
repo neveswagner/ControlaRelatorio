@@ -59,5 +59,12 @@ namespace ControlaRelatorio.Forms
         {
 
         }
+
+        private void FrmEscolhaGrid_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 27)
+
+                this.Close();
+        }
     }
 }

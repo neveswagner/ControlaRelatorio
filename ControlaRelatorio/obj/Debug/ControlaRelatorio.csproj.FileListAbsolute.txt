@@ -39,3 +39,45 @@ F:\Users\wagner.neves\Documents\relatorio citel\ControlaRelatorio\ControlaRelato
 F:\Users\wagner.neves\Documents\relatorio citel\ControlaRelatorio\ControlaRelatorio\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.DLL
 F:\Users\wagner.neves\Documents\relatorio citel\ControlaRelatorio\ControlaRelatorio\bin\Debug\Microsoft.ReportViewer.WebForms.DLL
 F:\Users\wagner.neves\Documents\relatorio citel\ControlaRelatorio\ControlaRelatorio\bin\Debug\Reports.dll
+F:\Users\wagner.neves\Documents\GitHub\ControlaRelatorio\ControlaRelatorio\bin\Debug\ControlaRelatorio.exe.config
+F:\Users\wagner.neves\Documents\GitHub\ControlaRelatorio\ControlaRelatorio\bin\Debug\ControlaRelatorio.exe
+F:\Users\wagner.neves\Documents\GitHub\ControlaRelatorio\ControlaRelatorio\bin\Debug\ControlaRelatorio.pdb
+F:\Users\wagner.neves\Documents\GitHub\ControlaRelatorio\ControlaRelatorio\bin\Debug\Chart.Mvc.dll
+F:\Users\wagner.neves\Documents\GitHub\ControlaRelatorio\ControlaRelatorio\bin\Debug\Microsoft.ReportViewer.Common.dll
+F:\Users\wagner.neves\Documents\GitHub\ControlaRelatorio\ControlaRelatorio\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.DLL
+F:\Users\wagner.neves\Documents\GitHub\ControlaRelatorio\ControlaRelatorio\bin\Debug\Microsoft.ReportViewer.WebForms.DLL
+F:\Users\wagner.neves\Documents\GitHub\ControlaRelatorio\ControlaRelatorio\bin\Debug\Microsoft.Web.Infrastructure.dll
+F:\Users\wagner.neves\Documents\GitHub\ControlaRelatorio\ControlaRelatorio\bin\Debug\Newtonsoft.Json.dll
+F:\Users\wagner.neves\Documents\GitHub\ControlaRelatorio\ControlaRelatorio\bin\Debug\Reports.dll
+F:\Users\wagner.neves\Documents\GitHub\ControlaRelatorio\ControlaRelatorio\bin\Debug\Services.dll
+F:\Users\wagner.neves\Documents\GitHub\ControlaRelatorio\ControlaRelatorio\bin\Debug\System.Web.Helpers.dll
+F:\Users\wagner.neves\Documents\GitHub\ControlaRelatorio\ControlaRelatorio\bin\Debug\System.Web.Mvc.dll
+F:\Users\wagner.neves\Documents\GitHub\ControlaRelatorio\ControlaRelatorio\bin\Debug\System.Web.Razor.dll
+F:\Users\wagner.neves\Documents\GitHub\ControlaRelatorio\ControlaRelatorio\bin\Debug\System.Web.WebPages.Deployment.dll
+F:\Users\wagner.neves\Documents\GitHub\ControlaRelatorio\ControlaRelatorio\bin\Debug\System.Web.WebPages.dll
+F:\Users\wagner.neves\Documents\GitHub\ControlaRelatorio\ControlaRelatorio\bin\Debug\System.Web.WebPages.Razor.dll
+F:\Users\wagner.neves\Documents\GitHub\ControlaRelatorio\ControlaRelatorio\bin\Debug\Services.pdb
+F:\Users\wagner.neves\Documents\GitHub\ControlaRelatorio\ControlaRelatorio\bin\Debug\Services.dll.config
+F:\Users\wagner.neves\Documents\GitHub\ControlaRelatorio\ControlaRelatorio\bin\Debug\Chart.Mvc.pdb
+F:\Users\wagner.neves\Documents\GitHub\ControlaRelatorio\ControlaRelatorio\bin\Debug\Chart.Mvc.xml
+F:\Users\wagner.neves\Documents\GitHub\ControlaRelatorio\ControlaRelatorio\bin\Debug\MySql.Data.xml
+F:\Users\wagner.neves\Documents\GitHub\ControlaRelatorio\ControlaRelatorio\bin\Debug\Newtonsoft.Json.xml
+F:\Users\wagner.neves\Documents\GitHub\ControlaRelatorio\ControlaRelatorio\bin\Debug\System.Web.Helpers.xml
+F:\Users\wagner.neves\Documents\GitHub\ControlaRelatorio\ControlaRelatorio\bin\Debug\System.Web.Mvc.xml
+F:\Users\wagner.neves\Documents\GitHub\ControlaRelatorio\ControlaRelatorio\bin\Debug\System.Web.Razor.xml
+F:\Users\wagner.neves\Documents\GitHub\ControlaRelatorio\ControlaRelatorio\bin\Debug\System.Web.WebPages.xml
+F:\Users\wagner.neves\Documents\GitHub\ControlaRelatorio\ControlaRelatorio\bin\Debug\System.Web.WebPages.Deployment.xml
+F:\Users\wagner.neves\Documents\GitHub\ControlaRelatorio\ControlaRelatorio\bin\Debug\System.Web.WebPages.Razor.xml
+F:\Users\wagner.neves\Documents\GitHub\ControlaRelatorio\ControlaRelatorio\obj\Debug\ControlaRelatorio.csprojAssemblyReference.cache
+F:\Users\wagner.neves\Documents\GitHub\ControlaRelatorio\ControlaRelatorio\obj\Debug\ControlaRelatorio.Forms.FrmBaixarReq.resources
+F:\Users\wagner.neves\Documents\GitHub\ControlaRelatorio\ControlaRelatorio\obj\Debug\ControlaRelatorio.Forms.FrmEditarRelatorio.resources
+F:\Users\wagner.neves\Documents\GitHub\ControlaRelatorio\ControlaRelatorio\obj\Debug\ControlaRelatorio.Forms.FrmEscolhaGrid.resources
+F:\Users\wagner.neves\Documents\GitHub\ControlaRelatorio\ControlaRelatorio\obj\Debug\ControlaRelatorio.Forms.FrmIncluirRelatorio.resources
+F:\Users\wagner.neves\Documents\GitHub\ControlaRelatorio\ControlaRelatorio\obj\Debug\ControlaRelatorio.Forms.FrmManutencaoRelatorio.resources
+F:\Users\wagner.neves\Documents\GitHub\ControlaRelatorio\ControlaRelatorio\obj\Debug\ControlaRelatorio.Properties.Resources.resources
+F:\Users\wagner.neves\Documents\GitHub\ControlaRelatorio\ControlaRelatorio\obj\Debug\ControlaRelatorio.csproj.GenerateResource.cache
+F:\Users\wagner.neves\Documents\GitHub\ControlaRelatorio\ControlaRelatorio\obj\Debug\ControlaRelatorio.csproj.CoreCompileInputs.cache
+F:\Users\wagner.neves\Documents\GitHub\ControlaRelatorio\ControlaRelatorio\obj\Debug\ControlaRelatorio.csproj.CopyComplete
+F:\Users\wagner.neves\Documents\GitHub\ControlaRelatorio\ControlaRelatorio\obj\Debug\ControlaRelatorio.exe
+F:\Users\wagner.neves\Documents\GitHub\ControlaRelatorio\ControlaRelatorio\obj\Debug\ControlaRelatorio.pdb
+F:\Users\wagner.neves\Documents\GitHub\ControlaRelatorio\ControlaRelatorio\obj\Debug\ControlaRelatorio.Forms.FrmPesquisaRelatorio.resources

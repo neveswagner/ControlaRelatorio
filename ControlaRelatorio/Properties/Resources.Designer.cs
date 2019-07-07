@@ -73,9 +73,49 @@ namespace ControlaRelatorio.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_cardápio_20 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-cardápio-20", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_cardápio_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-cardápio-32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_cardápio_filled_50__1_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-cardápio-filled-50 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_downloads_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-downloads-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_inserir_tabela_filled_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-inserir-tabela-filled-32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -96,6 +136,26 @@ namespace ControlaRelatorio.Properties {
         internal static System.Drawing.Bitmap icons8_localizar_e_substituir_40 {
             get {
                 object obj = ResourceManager.GetObject("icons8-localizar-e-substituir-40", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_pesquisar_20 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-pesquisar-20", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_pesquisar_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-pesquisar-48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
