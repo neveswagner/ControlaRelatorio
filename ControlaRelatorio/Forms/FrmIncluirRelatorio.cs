@@ -66,6 +66,9 @@ namespace ControlaRelatorio.Forms
             FrmEscolhaGrid frmEscGrid = (FrmEscolhaGrid)Application.OpenForms["FrmEscolhaGrid"];
             FrmEscolhaGrid frmgrid = new FrmEscolhaGrid();
 
+            FrmResumoAposIncluir frmresumoiposincluir = (FrmResumoAposIncluir)Application.OpenForms["frmresumoiposincluir"];
+            FrmResumoAposIncluir frmresumo = new FrmResumoAposIncluir();
+
             if (String.IsNullOrEmpty(requisitoTbx.Text))
             {
                 MessageBox.Show("Campo Requisito nao deve ser vazio");
@@ -101,7 +104,22 @@ namespace ControlaRelatorio.Forms
                 m.Observacao = ObservacaoTbx.Text;
 
                 dao.SalvarRelatorio(m);
+
                 MessageBox.Show("Requisito Gravado Com Sucesso !");
+
+                DateTime horario = DateTime.Now;
+
+                if (horario.Hour <= 12)
+                {
+                    frmresumo.ResumoTbxBox.Text = "Bom Dia\n" + "Favor Validar O Requisito\n\n" + m.Requisito + " " + m.Cliente;
+                }
+                else 
+                {
+                    frmresumo.ResumoTbxBox.Text = "Boa Tarde\n" + "Favor Validar O Requisito\n\n" + m.Requisito + " " + m.Cliente;
+                }
+
+
+                frmresumo.ShowDialog();
 
                 this.Close();
 

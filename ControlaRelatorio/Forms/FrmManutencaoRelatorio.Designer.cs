@@ -50,7 +50,6 @@
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.relatorioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridPendenteNaoAtualizado = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -73,36 +72,40 @@
             this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AtendenteLbl = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.AtualizadosPendenteValidacaoLbl = new System.Windows.Forms.Label();
+            this.PendenteAtualizacaoLbl = new System.Windows.Forms.Label();
             this.dataGridCountAtendente = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label3 = new System.Windows.Forms.Label();
+            this.QuantidadeAtendenteLbl = new System.Windows.Forms.Label();
             this.DiasCountAtendenteTbx = new System.Windows.Forms.TextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.PesquisaNumRequisitoTelaPrincipalTbx = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.MenuPnl = new System.Windows.Forms.Panel();
+            this.incluirRelatorioBtn = new System.Windows.Forms.Button();
+            this.ePnl = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.AtualizarGrids = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.MenuBtn = new System.Windows.Forms.Button();
+            this.relatorioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.controlerelatorioDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.incluirRelatorioBtn = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.ePnl = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.AtualizaGridsText = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPendenteAtualizado)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.relatorioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPendenteNaoAtualizado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPendenteTempo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridCountAtendente)).BeginInit();
             this.MenuPnl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.controlerelatorioDataSetBindingSource)).BeginInit();
             this.ePnl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.relatorioBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.controlerelatorioDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridPendenteAtualizado
@@ -111,11 +114,10 @@
             this.dataGridPendenteAtualizado.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.dataGridPendenteAtualizado.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridPendenteAtualizado.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridPendenteAtualizado.AutoGenerateColumns = false;
-            this.dataGridPendenteAtualizado.BackgroundColor = System.Drawing.Color.Azure;
-            this.dataGridPendenteAtualizado.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dataGridPendenteAtualizado.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridPendenteAtualizado.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.dataGridPendenteAtualizado.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridPendenteAtualizado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridPendenteAtualizado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -142,7 +144,7 @@
             this.dataGridPendenteAtualizado.ReadOnly = true;
             this.dataGridPendenteAtualizado.RowHeadersVisible = false;
             this.dataGridPendenteAtualizado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridPendenteAtualizado.Size = new System.Drawing.Size(493, 378);
+            this.dataGridPendenteAtualizado.Size = new System.Drawing.Size(518, 645);
             this.dataGridPendenteAtualizado.TabIndex = 1;
             this.dataGridPendenteAtualizado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridPendenteAtualizado_CellContentClick);
             this.dataGridPendenteAtualizado.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridPendenteAtualizado_CellContentDoubleClick);
@@ -222,10 +224,6 @@
             this.Column11.ReadOnly = true;
             this.Column11.Visible = false;
             // 
-            // relatorioBindingSource
-            // 
-            this.relatorioBindingSource.DataMember = "relatorio";
-            // 
             // dataGridPendenteNaoAtualizado
             // 
             this.dataGridPendenteNaoAtualizado.AllowUserToAddRows = false;
@@ -236,8 +234,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridPendenteNaoAtualizado.AutoGenerateColumns = false;
-            this.dataGridPendenteNaoAtualizado.BackgroundColor = System.Drawing.Color.Azure;
-            this.dataGridPendenteNaoAtualizado.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dataGridPendenteNaoAtualizado.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridPendenteNaoAtualizado.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.dataGridPendenteNaoAtualizado.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridPendenteNaoAtualizado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridPendenteNaoAtualizado.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -259,12 +258,12 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridPendenteNaoAtualizado.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridPendenteNaoAtualizado.Location = new System.Drawing.Point(70, 487);
+            this.dataGridPendenteNaoAtualizado.Location = new System.Drawing.Point(606, 494);
             this.dataGridPendenteNaoAtualizado.Name = "dataGridPendenteNaoAtualizado";
             this.dataGridPendenteNaoAtualizado.ReadOnly = true;
             this.dataGridPendenteNaoAtualizado.RowHeadersVisible = false;
             this.dataGridPendenteNaoAtualizado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridPendenteNaoAtualizado.Size = new System.Drawing.Size(517, 207);
+            this.dataGridPendenteNaoAtualizado.Size = new System.Drawing.Size(558, 227);
             this.dataGridPendenteNaoAtualizado.TabIndex = 2;
             this.dataGridPendenteNaoAtualizado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridPendenteNaoAtualizado_CellContentClick);
             this.dataGridPendenteNaoAtualizado.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridPendenteNaoAtualizado_CellDoubleClick);
@@ -347,17 +346,16 @@
             // 
             this.dataGridPendenteTempo.AllowUserToAddRows = false;
             this.dataGridPendenteTempo.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.dataGridPendenteTempo.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dataGridPendenteTempo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridPendenteTempo.AutoGenerateColumns = false;
-            this.dataGridPendenteTempo.BackgroundColor = System.Drawing.Color.Azure;
-            this.dataGridPendenteTempo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dataGridPendenteTempo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridPendenteTempo.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.dataGridPendenteTempo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
@@ -373,10 +371,12 @@
             this.Column12,
             this.Column13,
             this.Column14,
-            this.Column15});
+            this.Column15,
+            this.Column21,
+            this.Column20});
             this.dataGridPendenteTempo.DataSource = this.relatorioBindingSource;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.DeepSkyBlue;
@@ -388,7 +388,7 @@
             this.dataGridPendenteTempo.ReadOnly = true;
             this.dataGridPendenteTempo.RowHeadersVisible = false;
             this.dataGridPendenteTempo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridPendenteTempo.Size = new System.Drawing.Size(504, 378);
+            this.dataGridPendenteTempo.Size = new System.Drawing.Size(566, 399);
             this.dataGridPendenteTempo.TabIndex = 3;
             this.dataGridPendenteTempo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridPendenteTempo_CellContentClick);
             this.dataGridPendenteTempo.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridPendenteTempo_CellContentDoubleClick);
@@ -468,36 +468,53 @@
             this.Column15.ReadOnly = true;
             this.Column15.Visible = false;
             // 
+            // Column21
+            // 
+            this.Column21.DataPropertyName = "MesAbertotAtendente";
+            this.Column21.HeaderText = "Meses";
+            this.Column21.Name = "Column21";
+            this.Column21.ReadOnly = true;
+            // 
+            // Column20
+            // 
+            this.Column20.DataPropertyName = "DiasAbertoAtendente";
+            this.Column20.HeaderText = "Dias";
+            this.Column20.Name = "Column20";
+            this.Column20.ReadOnly = true;
+            // 
             // AtendenteLbl
             // 
             this.AtendenteLbl.AutoSize = true;
             this.AtendenteLbl.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AtendenteLbl.Location = new System.Drawing.Point(603, 20);
+            this.AtendenteLbl.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.AtendenteLbl.Location = new System.Drawing.Point(603, 22);
             this.AtendenteLbl.Name = "AtendenteLbl";
             this.AtendenteLbl.Size = new System.Drawing.Size(281, 18);
             this.AtendenteLbl.TabIndex = 8;
             this.AtendenteLbl.Text = "Atualizados e Pendente há mais de          dias";
             // 
-            // label1
+            // AtualizadosPendenteValidacaoLbl
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(67, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(231, 18);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Atualizados e Pendente de Validacao";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.AtualizadosPendenteValidacaoLbl.AutoSize = true;
+            this.AtualizadosPendenteValidacaoLbl.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AtualizadosPendenteValidacaoLbl.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.AtualizadosPendenteValidacaoLbl.Location = new System.Drawing.Point(76, 22);
+            this.AtualizadosPendenteValidacaoLbl.Name = "AtualizadosPendenteValidacaoLbl";
+            this.AtualizadosPendenteValidacaoLbl.Size = new System.Drawing.Size(231, 18);
+            this.AtualizadosPendenteValidacaoLbl.TabIndex = 9;
+            this.AtualizadosPendenteValidacaoLbl.Text = "Atualizados e Pendente de Validacao";
+            this.AtualizadosPendenteValidacaoLbl.Click += new System.EventHandler(this.label1_Click);
             // 
-            // label2
+            // PendenteAtualizacaoLbl
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(67, 456);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(157, 18);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Pendente de Atualizacao";
+            this.PendenteAtualizacaoLbl.AutoSize = true;
+            this.PendenteAtualizacaoLbl.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PendenteAtualizacaoLbl.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.PendenteAtualizacaoLbl.Location = new System.Drawing.Point(612, 458);
+            this.PendenteAtualizacaoLbl.Name = "PendenteAtualizacaoLbl";
+            this.PendenteAtualizacaoLbl.Size = new System.Drawing.Size(157, 18);
+            this.PendenteAtualizacaoLbl.TabIndex = 10;
+            this.PendenteAtualizacaoLbl.Text = "Pendente de Atualizacao";
             // 
             // dataGridCountAtendente
             // 
@@ -505,11 +522,10 @@
             this.dataGridCountAtendente.AllowUserToDeleteRows = false;
             dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.dataGridCountAtendente.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle8;
-            this.dataGridCountAtendente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridCountAtendente.AutoGenerateColumns = false;
-            this.dataGridCountAtendente.BackgroundColor = System.Drawing.Color.Azure;
-            this.dataGridCountAtendente.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dataGridCountAtendente.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridCountAtendente.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.dataGridCountAtendente.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridCountAtendente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridCountAtendente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn16,
@@ -524,12 +540,12 @@
             dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridCountAtendente.DefaultCellStyle = dataGridViewCellStyle9;
-            this.dataGridCountAtendente.Location = new System.Drawing.Point(1139, 56);
+            this.dataGridCountAtendente.Location = new System.Drawing.Point(1186, 56);
             this.dataGridCountAtendente.Name = "dataGridCountAtendente";
             this.dataGridCountAtendente.ReadOnly = true;
             this.dataGridCountAtendente.RowHeadersVisible = false;
             this.dataGridCountAtendente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridCountAtendente.Size = new System.Drawing.Size(205, 378);
+            this.dataGridCountAtendente.Size = new System.Drawing.Size(166, 378);
             this.dataGridCountAtendente.TabIndex = 11;
             this.dataGridCountAtendente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -555,19 +571,20 @@
             this.dataGridViewTextBoxColumn18.ReadOnly = true;
             this.dataGridViewTextBoxColumn18.Visible = false;
             // 
-            // label3
+            // QuantidadeAtendenteLbl
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(1136, 20);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(169, 18);
-            this.label3.TabIndex = 12;
-            this.label3.Text = "Quantidade por Atendente";
+            this.QuantidadeAtendenteLbl.AutoSize = true;
+            this.QuantidadeAtendenteLbl.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.QuantidadeAtendenteLbl.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.QuantidadeAtendenteLbl.Location = new System.Drawing.Point(1183, 27);
+            this.QuantidadeAtendenteLbl.Name = "QuantidadeAtendenteLbl";
+            this.QuantidadeAtendenteLbl.Size = new System.Drawing.Size(169, 18);
+            this.QuantidadeAtendenteLbl.TabIndex = 12;
+            this.QuantidadeAtendenteLbl.Text = "Quantidade por Atendente";
             // 
             // DiasCountAtendenteTbx
             // 
-            this.DiasCountAtendenteTbx.Location = new System.Drawing.Point(821, 20);
+            this.DiasCountAtendenteTbx.Location = new System.Drawing.Point(821, 22);
             this.DiasCountAtendenteTbx.Name = "DiasCountAtendenteTbx";
             this.DiasCountAtendenteTbx.Size = new System.Drawing.Size(30, 20);
             this.DiasCountAtendenteTbx.TabIndex = 14;
@@ -589,7 +606,7 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(127)))), ((int)(((byte)(255)))));
             this.button2.FlatAppearance.BorderSize = 2;
             this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
@@ -609,7 +626,8 @@
             // MenuPnl
             // 
             this.MenuPnl.AutoSize = true;
-            this.MenuPnl.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.MenuPnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(127)))), ((int)(((byte)(255)))));
+            this.MenuPnl.Controls.Add(this.AtualizarGrids);
             this.MenuPnl.Controls.Add(this.button3);
             this.MenuPnl.Controls.Add(this.button1);
             this.MenuPnl.Controls.Add(this.PesquisaNumRequisitoTelaPrincipalTbx);
@@ -620,51 +638,11 @@
             this.MenuPnl.TabIndex = 20;
             this.MenuPnl.Paint += new System.Windows.Forms.PaintEventHandler(this.MenuPnl_Paint);
             // 
-            // button1
-            // 
-            this.button1.AutoSize = true;
-            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button1.FlatAppearance.BorderSize = 2;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = global::ControlaRelatorio.Properties.Resources.icons8_inserir_tabela_filled_32;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.Location = new System.Drawing.Point(-13, 111);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(63, 42);
-            this.button1.TabIndex = 15;
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // MenuBtn
-            // 
-            this.MenuBtn.AutoSize = true;
-            this.MenuBtn.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.MenuBtn.FlatAppearance.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.MenuBtn.FlatAppearance.BorderSize = 2;
-            this.MenuBtn.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.MenuBtn.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.MenuBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.MenuBtn.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MenuBtn.Image = global::ControlaRelatorio.Properties.Resources.icons8_cardápio_32;
-            this.MenuBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.MenuBtn.Location = new System.Drawing.Point(3, 3);
-            this.MenuBtn.Name = "MenuBtn";
-            this.MenuBtn.Size = new System.Drawing.Size(49, 42);
-            this.MenuBtn.TabIndex = 14;
-            this.MenuBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.MenuBtn.UseVisualStyleBackColor = false;
-            this.MenuBtn.Click += new System.EventHandler(this.MenuBtn_Click);
-            // 
             // incluirRelatorioBtn
             // 
             this.incluirRelatorioBtn.AutoSize = true;
             this.incluirRelatorioBtn.BackColor = System.Drawing.Color.Transparent;
-            this.incluirRelatorioBtn.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.incluirRelatorioBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(127)))), ((int)(((byte)(255)))));
             this.incluirRelatorioBtn.FlatAppearance.BorderSize = 2;
             this.incluirRelatorioBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.incluirRelatorioBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
@@ -681,31 +659,11 @@
             this.incluirRelatorioBtn.UseVisualStyleBackColor = false;
             this.incluirRelatorioBtn.Click += new System.EventHandler(this.incluirRelatorioBtn_Click);
             // 
-            // button4
-            // 
-            this.button4.AutoSize = true;
-            this.button4.BackColor = System.Drawing.Color.Transparent;
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button4.FlatAppearance.BorderSize = 2;
-            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button4.Location = new System.Drawing.Point(-71, 197);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(123, 58);
-            this.button4.TabIndex = 0;
-            this.button4.Text = "Incluir F7";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.UseVisualStyleBackColor = false;
-            // 
             // ePnl
             // 
             this.ePnl.AutoSize = true;
-            this.ePnl.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ePnl.Controls.Add(this.button4);
+            this.ePnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(127)))), ((int)(((byte)(255)))));
+            this.ePnl.Controls.Add(this.AtualizaGridsText);
             this.ePnl.Controls.Add(this.label4);
             this.ePnl.Controls.Add(this.incluirRelatorioBtn);
             this.ePnl.Controls.Add(this.label5);
@@ -715,17 +673,6 @@
             this.ePnl.Size = new System.Drawing.Size(124, 941);
             this.ePnl.TabIndex = 21;
             this.ePnl.Visible = false;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label5.Location = new System.Drawing.Point(11, 633);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(56, 15);
-            this.label5.TabIndex = 22;
-            this.label5.Text = "Pesquisar";
             // 
             // label4
             // 
@@ -738,10 +685,40 @@
             this.label4.TabIndex = 23;
             this.label4.Text = "Requisito";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label5.Location = new System.Drawing.Point(11, 633);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(56, 15);
+            this.label5.TabIndex = 22;
+            this.label5.Text = "Pesquisar";
+            // 
+            // AtualizarGrids
+            // 
+            this.AtualizarGrids.BackColor = System.Drawing.Color.Transparent;
+            this.AtualizarGrids.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(127)))), ((int)(((byte)(255)))));
+            this.AtualizarGrids.FlatAppearance.BorderSize = 2;
+            this.AtualizarGrids.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.AtualizarGrids.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.AtualizarGrids.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AtualizarGrids.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AtualizarGrids.Image = global::ControlaRelatorio.Properties.Resources.icons8_sincronizar_conexão_40;
+            this.AtualizarGrids.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.AtualizarGrids.Location = new System.Drawing.Point(10, 207);
+            this.AtualizarGrids.Name = "AtualizarGrids";
+            this.AtualizarGrids.Size = new System.Drawing.Size(46, 52);
+            this.AtualizarGrids.TabIndex = 23;
+            this.AtualizarGrids.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.AtualizarGrids.UseVisualStyleBackColor = false;
+            this.AtualizarGrids.Click += new System.EventHandler(this.AtualizarGrids_Click);
+            // 
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.Transparent;
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(127)))), ((int)(((byte)(255)))));
             this.button3.FlatAppearance.BorderSize = 2;
             this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
@@ -757,19 +734,83 @@
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // button1
+            // 
+            this.button1.AutoSize = true;
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(127)))), ((int)(((byte)(255)))));
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(127)))), ((int)(((byte)(255)))));
+            this.button1.FlatAppearance.BorderSize = 2;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(127)))), ((int)(((byte)(255)))));
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(127)))), ((int)(((byte)(255)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = global::ControlaRelatorio.Properties.Resources.icons8_inserir_tabela_filled_32;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.Location = new System.Drawing.Point(-13, 111);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(63, 42);
+            this.button1.TabIndex = 15;
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // MenuBtn
+            // 
+            this.MenuBtn.AutoSize = true;
+            this.MenuBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(127)))), ((int)(((byte)(255)))));
+            this.MenuBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(127)))), ((int)(((byte)(255)))));
+            this.MenuBtn.FlatAppearance.BorderSize = 2;
+            this.MenuBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(127)))), ((int)(((byte)(255)))));
+            this.MenuBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(127)))), ((int)(((byte)(255)))));
+            this.MenuBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MenuBtn.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MenuBtn.Image = global::ControlaRelatorio.Properties.Resources.icons8_cardápio_32;
+            this.MenuBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.MenuBtn.Location = new System.Drawing.Point(3, 3);
+            this.MenuBtn.Name = "MenuBtn";
+            this.MenuBtn.Size = new System.Drawing.Size(49, 42);
+            this.MenuBtn.TabIndex = 14;
+            this.MenuBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.MenuBtn.UseVisualStyleBackColor = false;
+            this.MenuBtn.Click += new System.EventHandler(this.MenuBtn_Click);
+            // 
+            // relatorioBindingSource
+            // 
+            this.relatorioBindingSource.DataMember = "relatorio";
+            // 
+            // AtualizaGridsText
+            // 
+            this.AtualizaGridsText.BackColor = System.Drawing.Color.Transparent;
+            this.AtualizaGridsText.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(127)))), ((int)(((byte)(255)))));
+            this.AtualizaGridsText.FlatAppearance.BorderSize = 2;
+            this.AtualizaGridsText.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.AtualizaGridsText.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.AtualizaGridsText.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AtualizaGridsText.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AtualizaGridsText.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.AtualizaGridsText.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.AtualizaGridsText.Location = new System.Drawing.Point(4, 217);
+            this.AtualizaGridsText.Name = "AtualizaGridsText";
+            this.AtualizaGridsText.Size = new System.Drawing.Size(115, 32);
+            this.AtualizaGridsText.TabIndex = 24;
+            this.AtualizaGridsText.Text = "Atualizar Grids";
+            this.AtualizaGridsText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.AtualizaGridsText.UseVisualStyleBackColor = false;
+            this.AtualizaGridsText.Click += new System.EventHandler(this.button4_Click);
+            // 
             // FrmManutencaoRelatorio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Azure;
+            this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(1356, 733);
             this.Controls.Add(this.ePnl);
             this.Controls.Add(this.MenuPnl);
             this.Controls.Add(this.DiasCountAtendenteTbx);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.QuantidadeAtendenteLbl);
             this.Controls.Add(this.dataGridCountAtendente);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.PendenteAtualizacaoLbl);
+            this.Controls.Add(this.AtualizadosPendenteValidacaoLbl);
             this.Controls.Add(this.AtendenteLbl);
             this.Controls.Add(this.dataGridPendenteTempo);
             this.Controls.Add(this.dataGridPendenteNaoAtualizado);
@@ -779,20 +820,20 @@
             this.KeyPreview = true;
             this.Name = "FrmManutencaoRelatorio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Controle de Relatorio";
+            this.Text = "Controle de Relatorio  -  Versao Mark II";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmManutencaoRelatorio_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmManutencaoRelatorio_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPendenteAtualizado)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.relatorioBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPendenteNaoAtualizado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPendenteTempo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridCountAtendente)).EndInit();
             this.MenuPnl.ResumeLayout(false);
             this.MenuPnl.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.controlerelatorioDataSetBindingSource)).EndInit();
             this.ePnl.ResumeLayout(false);
             this.ePnl.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.relatorioBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.controlerelatorioDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -801,8 +842,8 @@
         #endregion
         private System.Windows.Forms.BindingSource relatorioBindingSource;
         public System.Windows.Forms.Label AtendenteLbl;
-        public System.Windows.Forms.Label label1;
-        public System.Windows.Forms.Label label2;
+        public System.Windows.Forms.Label AtualizadosPendenteValidacaoLbl;
+        public System.Windows.Forms.Label PendenteAtualizacaoLbl;
         public System.Windows.Forms.DataGridView dataGridPendenteAtualizado;
         public System.Windows.Forms.DataGridView dataGridPendenteNaoAtualizado;
         public System.Windows.Forms.DataGridView dataGridPendenteTempo;
@@ -817,21 +858,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column14;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column15;
         private System.Windows.Forms.BindingSource controlerelatorioDataSetBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
-        public System.Windows.Forms.Label label3;
+        public System.Windows.Forms.Label QuantidadeAtendenteLbl;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
@@ -850,10 +881,23 @@
         public System.Windows.Forms.Button MenuBtn;
         public System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel ePnl;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button incluirRelatorioBtn;
         public System.Windows.Forms.Label label5;
         public System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column15;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column21;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column20;
+        private System.Windows.Forms.Button AtualizarGrids;
+        private System.Windows.Forms.Button AtualizaGridsText;
     }
 }

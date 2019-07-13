@@ -365,21 +365,36 @@ namespace ControlaRelatorio.Forms
 
             if (MenuSize == true)
             {
-                //MenuPnl.Size = new Size(190, 900);
-                //MenuPnl.Location = new Point(-4, 0);
-                //  dataGridPendenteAtualizado.Size = new Size(578, 378);
-                //incluirRelatorioBtn.Size = new Size(129, 58);
-                //incluirRelatorioBtn.Location = new Point(incluirRelatorioBtn.Location.X 45, incluirRelatorioBtn.Location.Y, 103);
-                //incluirRelatorioBtn.Location = new Point(58, 105);
+                dataGridPendenteAtualizado.Location = new Point(187, 56);
+                AtualizadosPendenteValidacaoLbl.Location = new Point(187, 22);
+                AtendenteLbl.Location = new Point(726, 22);
+                DiasCountAtendenteTbx.Location = new Point(943, 22);
+                dataGridPendenteTempo.Location = new Point(726, 56);
+                dataGridPendenteNaoAtualizado.Location = new Point(726, 494);
+                PendenteAtualizacaoLbl.Location = new Point(726, 458);
+
+                dataGridCountAtendente.Visible = false;
+                QuantidadeAtendenteLbl.Visible = false;
+                
                 ePnl.Visible = true;
                 MenuSize = false;
+
             }
             else if (MenuSize == false)
             {
-                //MenuPnl.Size = new Size(55, 900);
-                //    dataGridPendenteAtualizado.Size = new Size(423, 378);
-                //incluirRelatorioBtn.Location = new Point(-71, 234);
+                
                 ePnl.Visible = false;
+                dataGridPendenteAtualizado.Location = new Point(70, 56);
+                AtualizadosPendenteValidacaoLbl.Location = new Point(76, 22);
+                AtendenteLbl.Location = new Point(603, 22);
+                DiasCountAtendenteTbx.Location = new Point(821, 22);
+                dataGridPendenteTempo.Location = new Point(606, 56);
+                dataGridPendenteNaoAtualizado.Location = new Point(606, 494);
+                PendenteAtualizacaoLbl.Location = new Point(603, 458);
+
+
+                dataGridCountAtendente.Visible = true;
+                QuantidadeAtendenteLbl.Visible = true;
                 MenuSize = true;
                 
             }
@@ -408,6 +423,16 @@ namespace ControlaRelatorio.Forms
         private void button3_Click(object sender, EventArgs e)
         {
             PesquisarTelaPrincipal();
+            AtualizaGrids();
+        }
+
+        private void AtualizarGrids_Click(object sender, EventArgs e)
+        {
+            AtualizaGrids();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
             AtualizaGrids();
         }
     }

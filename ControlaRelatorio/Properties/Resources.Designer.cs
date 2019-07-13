@@ -93,6 +93,16 @@ namespace ControlaRelatorio.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_cardápio_32_invertido {
+            get {
+                object obj = ResourceManager.GetObject("icons8-cardápio-32_invertido", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_cardápio_filled_50__1_ {
             get {
                 object obj = ResourceManager.GetObject("icons8-cardápio-filled-50 (1)", resourceCulture);
@@ -166,6 +176,26 @@ namespace ControlaRelatorio.Properties {
         internal static System.Drawing.Bitmap icons8_salvar_e_fechar_40 {
             get {
                 object obj = ResourceManager.GetObject("icons8-salvar-e-fechar-40", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_sincronizar_conexão_32__1_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-sincronizar-conexão-32 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_sincronizar_conexão_40 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-sincronizar-conexão-40", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -156,6 +156,12 @@
     <Compile Include="Forms\FrmPesquisaRelatorio.Designer.cs">
       <DependentUpon>FrmPesquisaRelatorio.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FrmResumoAposIncluir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmResumoAposIncluir.Designer.cs">
+      <DependentUpon>FrmResumoAposIncluir.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="sislogDataSet.Designer.cs">
@@ -180,6 +186,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmPesquisaRelatorio.resx">
       <DependentUpon>FrmPesquisaRelatorio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmResumoAposIncluir.resx">
+      <DependentUpon>FrmResumoAposIncluir.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -259,6 +268,9 @@
     <None Include="Resources\icons8-cardápio-20.png" />
     <None Include="Resources\icons8-cardápio-32.png" />
     <None Include="Resources\icons8-inserir-tabela-filled-32.png" />
+    <None Include="Resources\icons8-cardápio-32_invertido.png" />
+    <None Include="Resources\icons8-sincronizar-conexão-32 %281%29.png" />
+    <None Include="Resources\icons8-sincronizar-conexão-40.png" />
     <Content Include="Scripts\Chart.js" />
   </ItemGroup>
   <ItemGroup>

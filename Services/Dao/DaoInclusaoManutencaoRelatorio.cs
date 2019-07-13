@@ -266,22 +266,25 @@ namespace Services.Dao
             List<ManutencaoRelatorio> BuscarRelatorio = new List<ManutencaoRelatorio>();
             MySqlConnection conn = new ConexaoBancoMySQL().getConnection();
             conn = new MySqlConnection(connectionString);
-            String selecionaTodos = "SELECT id_relatorio, " +
-                                    "dtainclusao,  " +
-                                    "requisito, " +
-                                    "cliente, " +
-                                    "atendente,  " +
+            String selecionaTodos = "SELECT id_relatorio,  " +
+                                    "dtainclusao,   " +
+                                    "requisito,  " +
+                                    "cliente,  " +
+                                    "atendente,   " +
+                                    "pendente_status,  " +
+                                    "observacao,  " +
+                                    "cliente_atualizado, " +
                                     "pendente_status, " +
-                                    "observacao, " +
-                                    "cliente_atualizado," +
-                                    "pendente_status," +
-                                    "requisito_correcao," +
-                                    "requisito_atualizacao " +
-                                    "FROM relatorio  " +
-                                    "WHERE cliente_atualizado = 'S'" +
-                                    "and pendente_status = 'N'" +
-                                    "and requisito_correcao = ''  " +
-                                    "AND dtainclusao  BETWEEN '2000-01-01' AND CURRENT_DATE -@dias;";
+                                    "requisito_correcao, " +
+                                    "requisito_atualizacao,  " +
+                                    "TIMESTAMPDIFF(    MONTH,    dtainclusao + INTERVAL TIMESTAMPDIFF(YEAR, dtainclusao, CURRENT_DATE) YEAR,    CURRENT_DATE  ) AS Mes,    " +
+                                    "TIMESTAMPDIFF(    DAY,    dtainclusao + INTERVAL TIMESTAMPDIFF(MONTH, dtainclusao, CURRENT_DATE) MONTH,    CURRENT_DATE  ) AS Dias " +
+                                    "FROM relatorio   " +
+                                    "WHERE cliente_atualizado = 'S' " +
+                                    "AND pendente_status = 'N' " +
+                                    "AND requisito_correcao = '' " +
+                                    "AND dtainclusao  BETWEEN '2000-01-01' AND CURRENT_DATE -@dias " +
+                                    "ORDER BY dtainclusao;";
             conn.Open();
             MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand(selecionaTodos, conn);
             cmd.Parameters.Add(new MySql.Data.MySqlClient.MySqlParameter("dias", m.DiasCountAtendente));
@@ -306,6 +309,8 @@ namespace Services.Dao
                     novo.ClienteAtualizado = reader["cliente_atualizado"].ToString();
                     novo.RequisitoCorrecao = reader["requisito_correcao"].ToString();
                     novo.RequisitoAtualizacao = reader["requisito_atualizacao"].ToString();
+                    novo.DiasAbertoAtendente = reader["Dias"].ToString();
+                    novo.MesAbertotAtendente = reader["Mes"].ToString();
 
 
                     BuscarRelatorio.Add(novo);
