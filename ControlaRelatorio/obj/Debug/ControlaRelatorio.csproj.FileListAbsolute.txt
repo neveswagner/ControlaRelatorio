@@ -125,3 +125,4 @@ F:\Users\wagner.neves\Documents\ultimo\ControlaRelatorio\ControlaRelatorio\obj\D
 F:\Users\wagner.neves\Documents\ultimo\ControlaRelatorio\ControlaRelatorio\obj\Debug\ControlaRelatorio.csproj.CopyComplete
 F:\Users\wagner.neves\Documents\ultimo\ControlaRelatorio\ControlaRelatorio\obj\Debug\ControlaRelatorio.exe
 F:\Users\wagner.neves\Documents\ultimo\ControlaRelatorio\ControlaRelatorio\obj\Debug\ControlaRelatorio.pdb
+F:\Users\wagner.neves\Documents\GitHub\ControlaRelatorio\ControlaRelatorio\obj\Debug\ControlaRelatorio.Forms.FrmIncluirPrevisao.resources

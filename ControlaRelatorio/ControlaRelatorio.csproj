@@ -162,6 +162,12 @@
     <Compile Include="Forms\FrmResumoAposIncluir.Designer.cs">
       <DependentUpon>FrmResumoAposIncluir.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FrmIncluirPrevisao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmIncluirPrevisao.Designer.cs">
+      <DependentUpon>FrmIncluirPrevisao.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="sislogDataSet.Designer.cs">
@@ -189,6 +195,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmResumoAposIncluir.resx">
       <DependentUpon>FrmResumoAposIncluir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmIncluirPrevisao.resx">
+      <DependentUpon>FrmIncluirPrevisao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -271,6 +280,15 @@
     <None Include="Resources\icons8-cardápio-32_invertido.png" />
     <None Include="Resources\icons8-sincronizar-conexão-32 %281%29.png" />
     <None Include="Resources\icons8-sincronizar-conexão-40.png" />
+    <None Include="Resources\icons8-r-40.png" />
+    <None Include="Resources\icons8-r-32.png" />
+    <None Include="Resources\icons8-p-32.png" />
+    <None Include="Resources\icons8-inserir-linha-acima-32.png" />
+    <None Include="Resources\icons8-inserir-página-32.png" />
+    <None Include="Resources\icons8-pesquisar-32.png" />
+    <None Include="Resources\icons8-r-30.png" />
+    <None Include="Resources\icons8-r-28.png" />
+    <None Include="Resources\icons8-p-28.png" />
     <Content Include="Scripts\Chart.js" />
   </ItemGroup>
   <ItemGroup>

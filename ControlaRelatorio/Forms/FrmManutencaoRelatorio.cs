@@ -16,6 +16,10 @@ namespace ControlaRelatorio.Forms
     {
         ManutencaoRelatorio m = new ManutencaoRelatorio();
 
+        Previsao p = new Previsao();
+
+        DaoPrevisao daoprevisao = new DaoPrevisao();
+
         DaoInclusaoManutencaoRelatorio daoManutencaoRelarotio = new DaoInclusaoManutencaoRelatorio();
 
         FrmIncluirRelatorio frmIRel = (FrmIncluirRelatorio)Application.OpenForms["FrmIncluirRelatorio"];
@@ -24,15 +28,140 @@ namespace ControlaRelatorio.Forms
 
         public bool MenuSize = true;
 
+        public bool ModoRelatorio = true;
+
+        public bool ModoPrevisao = false;
+
 
         public FrmManutencaoRelatorio()
         {
             InitializeComponent();
+            ModoExibicaoRelatorioMenuFechado();
             DiasCountAtendenteTbx.Text = "3";
             DiasCount();
             this.PesquisaNumRequisitoTelaPrincipalTbx.Focus();
-            
+            exibirRelatorioBtn.Visible = false;
+            exibirRelatorioTxtBtn.Visible = false;
+
         }
+
+
+        public void DesabilitaComponentesRelatorio()
+        {
+            dataGridPendenteAtualizado.Visible = false;
+            AtualizadosPendenteValidacaoLbl.Visible = false;
+            dataGridPendenteNaoAtualizado.Visible = false;
+            dataGridPendenteTempo.Visible = false;
+            DiasCountAtendenteTbx.Visible = false;
+            QuantidadeAtendenteLbl.Visible = false;
+            PendenteAtualizacaoLbl.Visible = false;
+            dataGridCountAtendente.Visible = false;
+            AtendenteLbl.Visible = false;
+        }
+
+        public void ModoExibicaoPrevisaoMenuFechado()
+        {
+            dataGridPrevisaoAbertoProgramacao.Visible = true;
+            abertoNaProgramacaoLbl.Visible = true;
+
+            dataGridPrevisaoAbertoProgramacao.Location = new Point(70, 56);
+            abertoNaProgramacaoLbl.Location = new Point(76, 22);
+
+            ePnl.Visible = false;
+            MenuSize = true;
+
+
+        }
+
+
+        public void ModoExibicaoPrevisaoMenuAberto()
+        {
+            dataGridPrevisaoAbertoProgramacao.Visible = true;
+            abertoNaProgramacaoLbl.Visible = true;
+
+            dataGridPrevisaoAbertoProgramacao.Location = new Point(260, 56);
+            abertoNaProgramacaoLbl.Location = new Point(260, 22);
+
+
+            DesabilitaComponentesRelatorio();
+
+            ePnl.Visible = true;
+            MenuSize = false;
+        }
+
+
+
+
+
+        public void ModoExibicaoRelatorioMenuFechado()
+        {
+            dataGridPrevisaoAbertoProgramacao.Visible = false;
+            abertoNaProgramacaoLbl.Visible = false;
+
+
+            dataGridPendenteAtualizado.Visible = true;
+            AtualizadosPendenteValidacaoLbl.Visible = true;
+            AtendenteLbl.Visible = true;
+            DiasCountAtendenteTbx.Visible = true;
+            dataGridPendenteTempo.Visible = true;
+            dataGridPendenteNaoAtualizado.Visible = true;
+            PendenteAtualizacaoLbl.Visible = true;
+
+            ePnl.Visible = false;
+            dataGridPendenteAtualizado.Location = new Point(70, 56);
+            AtualizadosPendenteValidacaoLbl.Location = new Point(76, 22);
+            AtendenteLbl.Location = new Point(603, 22);
+            DiasCountAtendenteTbx.Location = new Point(821, 22);
+            dataGridPendenteTempo.Location = new Point(606, 56);
+            dataGridPendenteNaoAtualizado.Location = new Point(606, 494);
+            PendenteAtualizacaoLbl.Location = new Point(603, 458);
+
+
+            dataGridCountAtendente.Visible = true;
+            QuantidadeAtendenteLbl.Visible = true;
+            MenuSize = true;
+
+        }
+
+        public void ModoExibicaoRelatorioMenuAberto()
+        {
+            // Relatorio
+            if (ModoRelatorio == true)
+            {
+                dataGridPendenteAtualizado.Location = new Point(260, 56);
+                AtualizadosPendenteValidacaoLbl.Location = new Point(260, 22);
+                AtendenteLbl.Location = new Point(799, 22);
+                DiasCountAtendenteTbx.Location = new Point(1016, 22);
+                dataGridPendenteTempo.Location = new Point(799, 56);
+                dataGridPendenteNaoAtualizado.Location = new Point(799, 494);
+                PendenteAtualizacaoLbl.Location = new Point(799, 458);
+
+                dataGridCountAtendente.Visible = false;
+                QuantidadeAtendenteLbl.Visible = false;
+
+               // dataGridPrevisaoAbertoProgramacao.Visible = false;
+               // abertoNaProgramacaoLbl.Visible = false;
+
+            }
+
+            // Previsao
+            if (ModoPrevisao == true)
+            {
+                
+
+
+
+            }
+            ePnl.Visible = true;
+            MenuSize = false;
+
+
+            // Previsao
+
+
+        }
+
+
 
         public void BuscarTelapesquisa()
         {
@@ -115,6 +244,8 @@ namespace ControlaRelatorio.Forms
             dataGridPendenteTempo.DataSource = daoManutencaoRelarotio.BuscarRelatorioPendenteTempoAtualizado(m);
 
             dataGridCountAtendente.DataSource = daoManutencaoRelarotio.CountAtendente(m);
+
+            dataGridPrevisaoAbertoProgramacao.DataSource = daoprevisao.AbertoProgramacao(p);
 
         }
 
@@ -362,41 +493,40 @@ namespace ControlaRelatorio.Forms
 
         private void MenuBtn_Click(object sender, EventArgs e)
         {
-
+            // menu aberto modo relatorio
             if (MenuSize == true)
             {
-                dataGridPendenteAtualizado.Location = new Point(187, 56);
-                AtualizadosPendenteValidacaoLbl.Location = new Point(187, 22);
-                AtendenteLbl.Location = new Point(726, 22);
-                DiasCountAtendenteTbx.Location = new Point(943, 22);
-                dataGridPendenteTempo.Location = new Point(726, 56);
-                dataGridPendenteNaoAtualizado.Location = new Point(726, 494);
-                PendenteAtualizacaoLbl.Location = new Point(726, 458);
+                if(ModoPrevisao == true)
+                {
+                    ModoExibicaoPrevisaoMenuAberto();
+                    DesabilitaComponentesRelatorio();
+                }
+                else if (ModoRelatorio == true)
+                {
+                    ModoExibicaoRelatorioMenuAberto();
 
-                dataGridCountAtendente.Visible = false;
-                QuantidadeAtendenteLbl.Visible = false;
-                
-                ePnl.Visible = true;
-                MenuSize = false;
+                }
+
+
 
             }
+            // menu fechado modo relatorio
             else if (MenuSize == false)
             {
-                
-                ePnl.Visible = false;
-                dataGridPendenteAtualizado.Location = new Point(70, 56);
-                AtualizadosPendenteValidacaoLbl.Location = new Point(76, 22);
-                AtendenteLbl.Location = new Point(603, 22);
-                DiasCountAtendenteTbx.Location = new Point(821, 22);
-                dataGridPendenteTempo.Location = new Point(606, 56);
-                dataGridPendenteNaoAtualizado.Location = new Point(606, 494);
-                PendenteAtualizacaoLbl.Location = new Point(603, 458);
+
+                if (ModoPrevisao == true)
+                {
+                    ModoExibicaoPrevisaoMenuFechado();
+                }
+                else if (ModoRelatorio == true)
+                {
+                    ModoExibicaoRelatorioMenuFechado();
+
+                }
 
 
-                dataGridCountAtendente.Visible = true;
-                QuantidadeAtendenteLbl.Visible = true;
-                MenuSize = true;
-                
+
+
             }
 
           
@@ -434,6 +564,109 @@ namespace ControlaRelatorio.Forms
         private void button4_Click(object sender, EventArgs e)
         {
             AtualizaGrids();
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            FrmIncluirPrevisao frmincluirprevisao = new FrmIncluirPrevisao();
+
+            frmincluirprevisao.ShowDialog();
+
+            AtualizaGrids();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            FrmIncluirPrevisao frmincluirprevisao = new FrmIncluirPrevisao();
+
+            frmincluirprevisao.ShowDialog();
+
+            AtualizaGrids();
+        }
+
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void ExibirPrevisaoBtn_Click(object sender, EventArgs e)
+        {
+            // Controle de Modo
+            ModoRelatorio = false;
+            ModoPrevisao = true;
+
+
+            exibirPrevisaoBtn.Visible = false;
+            exibirPrevisaoTxtBtn.Visible = false;
+
+            exibirRelatorioBtn.Visible = true;
+            exibirRelatorioTxtBtn.Visible = true;
+
+            DesabilitaComponentesRelatorio();
+
+
+            ModoExibicaoPrevisaoMenuFechado();
+
+        }
+
+        private void ExibirPrevisaoTxtBtn_Click(object sender, EventArgs e)
+        {
+
+            exibirPrevisaoBtn.Visible = false;
+            exibirPrevisaoTxtBtn.Visible = false;
+
+            exibirRelatorioBtn.Visible = true;
+            exibirRelatorioTxtBtn.Visible = true;
+
+
+
+
+        }
+
+        private void ExibirRelatorioBtn_Click(object sender, EventArgs e)
+        {
+            // Controle de Modo
+            ModoRelatorio = true;
+            ModoPrevisao = false;
+
+            exibirPrevisaoBtn.Visible = true;
+            exibirPrevisaoTxtBtn.Visible = true;
+
+            exibirRelatorioBtn.Visible = false;
+            exibirRelatorioTxtBtn.Visible = false;
+
+            ModoExibicaoRelatorioMenuFechado();
+
+
+
+
+
+        }
+
+        private void ExibirRelatorioTxtBtn_Click(object sender, EventArgs e)
+        {
+            exibirPrevisaoBtn.Visible = true;
+            exibirPrevisaoTxtBtn.Visible = true;
+
+            exibirRelatorioBtn.Visible = false;
+            exibirRelatorioTxtBtn.Visible = false;
+
+
+            /*
+            ePnl.Visible = false;
+            dataGridPendenteAtualizado.Location = new Point(70, 56);
+            AtualizadosPendenteValidacaoLbl.Location = new Point(76, 22);
+            AtendenteLbl.Location = new Point(603, 22);
+            DiasCountAtendenteTbx.Location = new Point(821, 22);
+            dataGridPendenteTempo.Location = new Point(606, 56);
+            dataGridPendenteNaoAtualizado.Location = new Point(606, 494);
+            PendenteAtualizacaoLbl.Location = new Point(603, 458);
+
+
+            dataGridCountAtendente.Visible = true;
+            QuantidadeAtendenteLbl.Visible = true;
+            */
+
         }
     }
 }

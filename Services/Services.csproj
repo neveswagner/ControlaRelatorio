@@ -104,7 +104,9 @@
   <ItemGroup>
     <Compile Include="Dao\ConexaoBancoMySQL.cs" />
     <Compile Include="Dao\DaoInclusaoManutencaoRelatorio.cs" />
+    <Compile Include="Dao\DaoPrevisao.cs" />
     <Compile Include="Models\ManutencaoRelatorio.cs" />
+    <Compile Include="Models\Previsao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
