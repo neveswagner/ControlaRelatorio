@@ -65,18 +65,7 @@ namespace Services.Dao
                 List<Previsao> AbertoProgramacao = new List<Previsao>();
                 MySqlConnection conn = new ConexaoBancoMySQL().getConnection();
                 conn = new MySqlConnection(connectionString);
-            String selecionaTodos = "SELECT id_previsao," +
-                                    "requisito," +
-                                    "dtainclusao," +
-                                    "dtaprevisao," +
-                                    "cliente,atendente," +
-                                    "cliente_atualizado," +
-                                    "requisito_atualizacao," +
-                                    "concluido_status," +
-                                    "observacao," +
-                                    "baixado_programacao " +
-                                    "FROM previsao " +
-                                    "WHERE baixado_programacao = 'N';; ";
+                String selecionaTodos = "SELECT Mes, Dias, id_previsao, requisito, dtainclusao, dtaprevisao, cliente, atendente, cliente_atualizado, requisito_atualizacao, concluido_status, observacao, baixado_programacao FROM(SELECT id_previsao, requisito, dtainclusao, dtaprevisao, cliente, atendente, cliente_atualizado, requisito_atualizacao, concluido_status, observacao, baixado_programacao,  TIMESTAMPDIFF(     MONTH,     dtaprevisao + INTERVAL TIMESTAMPDIFF(YEAR, dtaprevisao, CURRENT_DATE) YEAR,     CURRENT_DATE  ) AS Mes,  TIMESTAMPDIFF(    DAY,     dtaprevisao + INTERVAL TIMESTAMPDIFF(MONTH, dtaprevisao, CURRENT_DATE) MONTH,     CURRENT_DATE   ) AS Dias FROM previsao   ) t WHERE concluido_status = 'N' AND Dias > '0' ORDER BY Mes DESC;; ";
                 conn.Open();
                 MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand(selecionaTodos, conn);
 
@@ -101,6 +90,8 @@ namespace Services.Dao
                         novo.ClienteAtualizado = reader["cliente_atualizado"].ToString();
                         novo.RequisitoAtualizacao = reader["requisito_atualizacao"].ToString();
                         novo.BaixadoProgramacao = reader["baixado_programacao"].ToString();
+                        novo.MesPrevisao = reader["Mes"].ToString();
+                        novo.DiasPrevisao = reader["Dias"].ToString();
 
 
 

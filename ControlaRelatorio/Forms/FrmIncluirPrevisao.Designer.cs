@@ -269,7 +269,7 @@
             this.baixadoProgramacaoCbx.Name = "baixadoProgramacaoCbx";
             this.baixadoProgramacaoCbx.Size = new System.Drawing.Size(37, 21);
             this.baixadoProgramacaoCbx.TabIndex = 74;
-            this.baixadoProgramacaoCbx.Text = "N";
+            this.baixadoProgramacaoCbx.Text = "S";
             // 
             // label3
             // 

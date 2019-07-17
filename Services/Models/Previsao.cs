@@ -31,6 +31,9 @@ namespace Services.Models
 
         public String Observacao { get; set; }
 
-        
+        public String DiasPrevisao { get; set; }
+
+        public String MesPrevisao { get; set; }
+
     }
 }

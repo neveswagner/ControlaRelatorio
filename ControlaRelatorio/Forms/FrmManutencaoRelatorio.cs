@@ -32,6 +32,8 @@ namespace ControlaRelatorio.Forms
 
         public bool ModoPrevisao = false;
 
+        public String TextoVersaoRelatorio = "Controle de Relatorio  -  Versao Mark III";
+        public String TextoVersaoPrevisao = "Controle de Previsao  -  Versao Mark III";
 
         public FrmManutencaoRelatorio()
         {
@@ -57,6 +59,7 @@ namespace ControlaRelatorio.Forms
             PendenteAtualizacaoLbl.Visible = false;
             dataGridCountAtendente.Visible = false;
             AtendenteLbl.Visible = false;
+
         }
 
         public void ModoExibicaoPrevisaoMenuFechado()
@@ -69,6 +72,8 @@ namespace ControlaRelatorio.Forms
 
             ePnl.Visible = false;
             MenuSize = true;
+
+            
 
 
         }
@@ -591,10 +596,15 @@ namespace ControlaRelatorio.Forms
 
         private void ExibirPrevisaoBtn_Click(object sender, EventArgs e)
         {
+            
+
+
             // Controle de Modo
             ModoRelatorio = false;
             ModoPrevisao = true;
-
+            ePnl.BackColor = Color.FromArgb(16, 123, 17);
+            MenuPnl.BackColor = Color.FromArgb(16, 123, 17);
+            this.Text = TextoVersaoPrevisao;
 
             exibirPrevisaoBtn.Visible = false;
             exibirPrevisaoTxtBtn.Visible = false;
@@ -625,9 +635,16 @@ namespace ControlaRelatorio.Forms
 
         private void ExibirRelatorioBtn_Click(object sender, EventArgs e)
         {
+
+            
             // Controle de Modo
             ModoRelatorio = true;
             ModoPrevisao = false;
+
+            ePnl.BackColor = Color.FromArgb(0, 127, 255);
+            MenuPnl.BackColor = Color.FromArgb(0, 127, 255);
+            this.Text = TextoVersaoRelatorio;
+
 
             exibirPrevisaoBtn.Visible = true;
             exibirPrevisaoTxtBtn.Visible = true;
