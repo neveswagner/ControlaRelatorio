@@ -35,5 +35,8 @@ namespace Services.Models
 
         public String MesPrevisao { get; set; }
 
+        public String QtdVencidos { get; set; }
+
+
     }
 }

@@ -39,6 +39,7 @@
             this.ResumoTbxBox.Size = new System.Drawing.Size(217, 111);
             this.ResumoTbxBox.TabIndex = 0;
             this.ResumoTbxBox.Text = "";
+            this.ResumoTbxBox.TextChanged += new System.EventHandler(this.ResumoTbxBox_TextChanged);
             // 
             // FrmResumoAposIncluir
             // 

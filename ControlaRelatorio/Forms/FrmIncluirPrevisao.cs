@@ -44,11 +44,7 @@ namespace ControlaRelatorio.Forms
                 MessageBox.Show("Campo Cliente nao deve ser vazio");
                 this.clientTbx.Focus();
             }
-            else if (String.IsNullOrEmpty(atendenteTbx.Text))
-            {
-                MessageBox.Show("Campo Atendente nao deve ser vazio");
-                this.atendenteTbx.Focus();
-            }
+            
             else
             {
 
@@ -57,7 +53,6 @@ namespace ControlaRelatorio.Forms
                 p.DtaPrevisao = Convert.ToDateTime(dtaPrevisaoDtm.Text);
                 p.Requisito = requisitoTbx.Text;
                 p.Cliente = clientTbx.Text;
-                p.Atendente = atendenteTbx.Text;
                 p.ConcluidoStatus = validadoCbx.Text;
                 p.ClienteAtualizado = clienteAtualizadoCbx.Text;
                 p.Observacao = ObservacaoTbx.Text;
@@ -74,6 +69,13 @@ namespace ControlaRelatorio.Forms
             }
 
         }
+
+        private void FrmIncluirPrevisao_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 27)
+
+                this.Close();
         }
+    }
 
 }

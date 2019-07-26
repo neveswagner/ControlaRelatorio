@@ -65,7 +65,7 @@ namespace Services.Dao
                 List<Previsao> AbertoProgramacao = new List<Previsao>();
                 MySqlConnection conn = new ConexaoBancoMySQL().getConnection();
                 conn = new MySqlConnection(connectionString);
-                String selecionaTodos = "SELECT Mes, Dias, id_previsao, requisito, dtainclusao, dtaprevisao, cliente, atendente, cliente_atualizado, requisito_atualizacao, concluido_status, observacao, baixado_programacao FROM(SELECT id_previsao, requisito, dtainclusao, dtaprevisao, cliente, atendente, cliente_atualizado, requisito_atualizacao, concluido_status, observacao, baixado_programacao,  TIMESTAMPDIFF(     MONTH,     dtaprevisao + INTERVAL TIMESTAMPDIFF(YEAR, dtaprevisao, CURRENT_DATE) YEAR,     CURRENT_DATE  ) AS Mes,  TIMESTAMPDIFF(    DAY,     dtaprevisao + INTERVAL TIMESTAMPDIFF(MONTH, dtaprevisao, CURRENT_DATE) MONTH,     CURRENT_DATE   ) AS Dias FROM previsao   ) t WHERE concluido_status = 'N' AND Dias > '0' ORDER BY Mes DESC;; ";
+                String selecionaTodos = "SELECT Mes, Dias, id_previsao, requisito, dtainclusao, dtaprevisao, cliente, atendente, cliente_atualizado, requisito_atualizacao, concluido_status, observacao, baixado_programacao FROM(SELECT id_previsao, requisito, dtainclusao, dtaprevisao, cliente, atendente, cliente_atualizado, requisito_atualizacao, concluido_status, observacao, baixado_programacao,  TIMESTAMPDIFF(     MONTH,     dtaprevisao + INTERVAL TIMESTAMPDIFF(YEAR, dtaprevisao, CURRENT_DATE) YEAR,     CURRENT_DATE  ) AS Mes,  TIMESTAMPDIFF(    DAY,     dtaprevisao + INTERVAL TIMESTAMPDIFF(MONTH, dtaprevisao, CURRENT_DATE) MONTH,     CURRENT_DATE   ) AS Dias FROM previsao   ) t WHERE concluido_status = 'N'  ORDER BY Mes DESC, Mes, Dias DESC;; "; 
                 conn.Open();
                 MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand(selecionaTodos, conn);
 
@@ -94,12 +94,6 @@ namespace Services.Dao
                         novo.DiasPrevisao = reader["Dias"].ToString();
 
 
-
-
-
-
-
-
                     AbertoProgramacao.Add(novo);
 
 
@@ -113,6 +107,58 @@ namespace Services.Dao
                     conn.Close();
                 }
             }
+
+
+        public string CountVencidos(Previsao p)
+        {
+            string CountVencidos = string.Empty;
+          //  List<Previsao> CountVencidos = new List<Previsao>();
+            MySqlConnection conn = new ConexaoBancoMySQL().getConnection();
+            conn = new MySqlConnection(connectionString);
+            String selecionaTodos = "SELECT SUM(quantidade) AS  quantidade_vencidos FROM( SELECT DISTINCT Dias,    COUNT(*) AS quantidade FROM (SELECT  Dias  FROM (SELECT    requisito_atualizacao,      concluido_status,      baixado_programacao,      TIMESTAMPDIFF(        MONTH,dtaprevisao + INTERVAL TIMESTAMPDIFF(YEAR, dtaprevisao, CURRENT_DATE) YEAR,CURRENT_DATE) AS Mes,   TIMESTAMPDIFF(    DAY,  dtaprevisao + INTERVAL TIMESTAMPDIFF(MONTH, dtaprevisao, CURRENT_DATE) MONTH,   CURRENT_DATE   ) AS Dias FROM  previsao) q  WHERE concluido_status = 'N' AND Dias >= '0'  AND Mes >= '0') j GROUP BY Dias HAVING COUNT(Dias) > 0) s ORDER BY quantidade DESC;; ";
+            conn.Open();
+            MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand(selecionaTodos, conn);
+
+            try
+            {
+
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+
+                while (reader.Read())
+                {
+                    Previsao novo = new Previsao();
+                    /*
+                    novo.Id_relatorio = (int)reader["id_previsao"];
+                    novo.DtaInclusao = Convert.ToDateTime(reader["dtainclusao"].ToString());
+                    novo.DtaPrevisao = Convert.ToDateTime(reader["dtaprevisao"].ToString());
+                    novo.Requisito = reader["requisito"].ToString();
+                    novo.Cliente = reader["cliente"].ToString();
+                    novo.Atendente = reader["atendente"].ToString();
+                    novo.ConcluidoStatus = reader["concluido_status"].ToString();
+                    novo.Observacao = reader["observacao"].ToString();
+                    novo.ClienteAtualizado = reader["cliente_atualizado"].ToString();
+                    novo.RequisitoAtualizacao = reader["requisito_atualizacao"].ToString();
+                    novo.BaixadoProgramacao = reader["baixado_programacao"].ToString();
+                    novo.MesPrevisao = reader["Mes"].ToString();
+                    */
+                    novo.QtdVencidos = reader["quantidade_vencidos"].ToString();
+
+
+                    //CountVencidos.Add(novo);
+
+
+                }
+
+                conn.Close();
+                return CountVencidos;
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
+
+    }
     }
 

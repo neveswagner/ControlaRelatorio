@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Collections.Generic;
 
 namespace ControlaRelatorio.Forms
 {
@@ -26,39 +27,52 @@ namespace ControlaRelatorio.Forms
 
         FrmEscolhaGrid grid = (FrmEscolhaGrid)Application.OpenForms["FrmEscolhaGrid"];
 
+        string AtendenteClick = "";
+
         public bool MenuSize = true;
 
         public bool ModoRelatorio = true;
 
         public bool ModoPrevisao = false;
 
-        public String TextoVersaoRelatorio = "Controle de Relatorio  -  Versao Mark III";
-        public String TextoVersaoPrevisao = "Controle de Previsao  -  Versao Mark III";
+        public String TextoVersaoRelatorio = "Controle de Relatorio  -  Versao Mark IV";
+        public String TextoVersaoPrevisao = "Controle de Previsao  -  Versao Mark IV";
 
         public FrmManutencaoRelatorio()
         {
             InitializeComponent();
             ModoExibicaoRelatorioMenuFechado();
-            DiasCountAtendenteTbx.Text = "3";
+            DiasCountAtendenteTbx.Text = "0";
             DiasCount();
             this.PesquisaNumRequisitoTelaPrincipalTbx.Focus();
             exibirRelatorioBtn.Visible = false;
             exibirRelatorioTxtBtn.Visible = false;
+
+            QtdVencidoLbl.Text = Convert.ToString(daoprevisao.CountVencidos(p));
+
+            daoprevisao.AbertoProgramacao(p);
+
+
+
+
+
 
         }
 
 
         public void DesabilitaComponentesRelatorio()
         {
-            dataGridPendenteAtualizado.Visible = false;
             AtualizadosPendenteValidacaoLbl.Visible = false;
             dataGridPendenteNaoAtualizado.Visible = false;
             dataGridPendenteTempo.Visible = false;
-            DiasCountAtendenteTbx.Visible = false;
             QuantidadeAtendenteLbl.Visible = false;
             PendenteAtualizacaoLbl.Visible = false;
             dataGridCountAtendente.Visible = false;
-            AtendenteLbl.Visible = false;
+
+            incluirRelatorioBtn.Enabled = false;
+            incluirRelatorioTextBtn.Enabled = false;
+            pesquisarRelatorioBtn.Enabled = false;
+            PesquisaNumRequisitoTelaPrincipalTbx.Visible = false;
 
         }
 
@@ -73,7 +87,7 @@ namespace ControlaRelatorio.Forms
             ePnl.Visible = false;
             MenuSize = true;
 
-            
+
 
 
         }
@@ -104,22 +118,18 @@ namespace ControlaRelatorio.Forms
             abertoNaProgramacaoLbl.Visible = false;
 
 
-            dataGridPendenteAtualizado.Visible = true;
             AtualizadosPendenteValidacaoLbl.Visible = true;
-            AtendenteLbl.Visible = true;
-            DiasCountAtendenteTbx.Visible = true;
             dataGridPendenteTempo.Visible = true;
             dataGridPendenteNaoAtualizado.Visible = true;
             PendenteAtualizacaoLbl.Visible = true;
 
             ePnl.Visible = false;
-            dataGridPendenteAtualizado.Location = new Point(70, 56);
+            dataGridPendenteTempo.Location = new Point(70, 56);
             AtualizadosPendenteValidacaoLbl.Location = new Point(76, 22);
-            AtendenteLbl.Location = new Point(603, 22);
             DiasCountAtendenteTbx.Location = new Point(821, 22);
-            dataGridPendenteTempo.Location = new Point(606, 56);
-            dataGridPendenteNaoAtualizado.Location = new Point(606, 494);
-            PendenteAtualizacaoLbl.Location = new Point(603, 458);
+            //dataGridPendenteTempo.Location = new Point(606, 56);
+            dataGridPendenteNaoAtualizado.Location = new Point(650, 56);
+            PendenteAtualizacaoLbl.Location = new Point(650, 22);
 
 
             dataGridCountAtendente.Visible = true;
@@ -133,26 +143,25 @@ namespace ControlaRelatorio.Forms
             // Relatorio
             if (ModoRelatorio == true)
             {
-                dataGridPendenteAtualizado.Location = new Point(260, 56);
+                dataGridPendenteTempo.Location = new Point(260, 56);
                 AtualizadosPendenteValidacaoLbl.Location = new Point(260, 22);
-                AtendenteLbl.Location = new Point(799, 22);
                 DiasCountAtendenteTbx.Location = new Point(1016, 22);
-                dataGridPendenteTempo.Location = new Point(799, 56);
-                dataGridPendenteNaoAtualizado.Location = new Point(799, 494);
-                PendenteAtualizacaoLbl.Location = new Point(799, 458);
+               // dataGridPendenteTempo.Location = new Point(799, 56);
+                dataGridPendenteNaoAtualizado.Location = new Point(838, 56);
+                PendenteAtualizacaoLbl.Location = new Point(843, 22);
 
                 dataGridCountAtendente.Visible = false;
                 QuantidadeAtendenteLbl.Visible = false;
 
-               // dataGridPrevisaoAbertoProgramacao.Visible = false;
-               // abertoNaProgramacaoLbl.Visible = false;
+                // dataGridPrevisaoAbertoProgramacao.Visible = false;
+                // abertoNaProgramacaoLbl.Visible = false;
 
             }
 
             // Previsao
             if (ModoPrevisao == true)
             {
-                
+
 
 
 
@@ -166,6 +175,74 @@ namespace ControlaRelatorio.Forms
 
         }
 
+
+        public void RowsColor()
+        {
+
+            
+            for (int i = 0; i < dataGridPrevisaoAbertoProgramacao.Rows.Count; i++)
+            {
+                int Dias = Int32.Parse(dataGridPrevisaoAbertoProgramacao.Rows[i].Cells[12].Value.ToString());
+                int Mes = Int32.Parse(dataGridPrevisaoAbertoProgramacao.Rows[i].Cells[11].Value.ToString());
+                
+                if (Dias >= -10 && Dias <= -1 &&  Mes == 0)
+                {
+                    dataGridPrevisaoAbertoProgramacao.Rows[i].DefaultCellStyle.BackColor = Color.Yellow;
+                }
+                
+                else if (Dias <= -10 && Mes >= 0  )
+                {
+                    dataGridPrevisaoAbertoProgramacao.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(16, 123, 17);
+                }
+
+                else if ( Mes <= -1)
+                {
+                    dataGridPrevisaoAbertoProgramacao.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(16, 123, 17);
+                }
+
+                else if (Dias >= 0 && Mes >= 0)
+                 {
+                     dataGridPrevisaoAbertoProgramacao.Rows[i].DefaultCellStyle.BackColor = Color.Red;
+                 }
+                
+
+
+            }
+
+        }
+
+
+        public void RowsColorRelatorio()
+        {
+
+
+            for (int i = 0; i < dataGridPendenteTempo.Rows.Count; i++)
+            {
+                int Dias = Int32.Parse(dataGridPendenteTempo.Rows[i].Cells[11].Value.ToString());
+                int Mes = Int32.Parse(dataGridPendenteTempo.Rows[i].Cells[10].Value.ToString());
+
+                if (Dias > 3 && Dias <= 7 && Mes == 0)
+                {
+                    dataGridPendenteTempo.Rows[i].DefaultCellStyle.BackColor = Color.Yellow;
+                }
+               
+                else if (Mes >= 1 )// && Dias <= -1 && Mes == 0)
+                {
+                    dataGridPendenteTempo.Rows[i].DefaultCellStyle.BackColor = Color.Red;
+                }
+                else if (Dias >= 8)// && Dias <= -1 && Mes == 0)
+                {
+                    dataGridPendenteTempo.Rows[i].DefaultCellStyle.BackColor = Color.Red;
+                }
+                
+                else if (Dias >= 0 && Dias <= 3 && Mes == 0)
+                {
+                    dataGridPendenteTempo.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(16, 123, 17);
+                }             
+
+            }
+
+        }
 
 
         public void BuscarTelapesquisa()
@@ -242,7 +319,6 @@ namespace ControlaRelatorio.Forms
 
         public void AtualizaGrids()
         {
-            dataGridPendenteAtualizado.DataSource = daoManutencaoRelarotio.BuscarRelatoriolienteAtualizado(m);
 
             dataGridPendenteNaoAtualizado.DataSource = daoManutencaoRelarotio.BuscarRelatoriolienteNaoAtualizado(m);
 
@@ -252,12 +328,14 @@ namespace ControlaRelatorio.Forms
 
             dataGridPrevisaoAbertoProgramacao.DataSource = daoprevisao.AbertoProgramacao(p);
 
+
+
         }
 
         private void incluirRelatorioBtn_Click(object sender, EventArgs e)
         {
             FrmIncluirRelatorio frmIncluirRelatorio = new FrmIncluirRelatorio();
-        
+
             frmIncluirRelatorio.ShowDialog();
 
             AtualizaGrids();
@@ -265,7 +343,7 @@ namespace ControlaRelatorio.Forms
 
         private void FrmManutencaoRelatorio_Load(object sender, EventArgs e)
         {
-           
+
             AtualizaGrids();
 
 
@@ -284,7 +362,7 @@ namespace ControlaRelatorio.Forms
 
         private void dataGridPendenteAtualizado_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
         }
 
         private void dataGridPendenteAtualizado_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -298,29 +376,7 @@ namespace ControlaRelatorio.Forms
 
             FrmEscolhaGrid frmescolhagrid = new FrmEscolhaGrid();
 
-            // editar
-            m.Requisito = frmEditarRelatorio.requisitoTbx.Text = dataGridPendenteAtualizado.CurrentRow.Cells[0].Value.ToString();
-            m.DtaInclusao = Convert.ToDateTime(frmEditarRelatorio.dtaInclusaoDtm.Text = dataGridPendenteAtualizado.CurrentRow.Cells[1].Value.ToString());
-            m.Cliente = frmEditarRelatorio.clientTbx.Text = dataGridPendenteAtualizado.CurrentRow.Cells[2].Value.ToString();
-            m.Atendente = frmEditarRelatorio.atendenteTbx.Text = dataGridPendenteAtualizado.CurrentRow.Cells[3].Value.ToString();
-            m.Observacao = frmEditarRelatorio.ObservacaoTbx.Text = dataGridPendenteAtualizado.CurrentRow.Cells[4].Value.ToString();
-            m.Id_relatorio = Convert.ToInt32(frmEditarRelatorio.id_relatorioTbx.Text = dataGridPendenteAtualizado.CurrentRow.Cells[5].Value.ToString());
-            m.PendenteStatus = frmEditarRelatorio.validadoCbx.Text = dataGridPendenteAtualizado.CurrentRow.Cells[6].Value.ToString();
-            m.RequisitoCorrecao = frmEditarRelatorio.requisitoCorrecaoTbx.Text = dataGridPendenteAtualizado.CurrentRow.Cells[7].Value.ToString();
-            m.RequisitoAtualizacao = frmEditarRelatorio.requisitoAtualizacaoTbx.Text = dataGridPendenteAtualizado.CurrentRow.Cells[8].Value.ToString();
-            m.ClienteAtualizado = frmEditarRelatorio.clienteAtualizadoCbx.Text = dataGridPendenteAtualizado.CurrentRow.Cells[9].Value.ToString();
-
-
-
-            //baixar
-            m.Requisito = frmbaixaereq.requisitoTbx.Text = dataGridPendenteAtualizado.CurrentRow.Cells[0].Value.ToString();
-            m.DtaInclusao = Convert.ToDateTime(frmbaixaereq.dtaInclusaoDtm.Text = dataGridPendenteAtualizado.CurrentRow.Cells[1].Value.ToString());
-            m.Cliente = frmbaixaereq.clientTbx.Text = dataGridPendenteAtualizado.CurrentRow.Cells[2].Value.ToString();
-            m.Atendente = frmbaixaereq.atendenteTbx.Text = dataGridPendenteAtualizado.CurrentRow.Cells[3].Value.ToString();
-            m.Observacao = frmbaixaereq.ObservacaoTbx.Text = dataGridPendenteAtualizado.CurrentRow.Cells[4].Value.ToString();
-            m.Id_relatorio = Convert.ToInt32(frmbaixaereq.id_relatorioTbx.Text = dataGridPendenteAtualizado.CurrentRow.Cells[5].Value.ToString());
-            m.RequisitoCorrecao = frmbaixaereq.requisitoCorrecaoTbx.Text = dataGridPendenteAtualizado.CurrentRow.Cells[7].Value.ToString();
-           
+            
 
             frmescolhagrid.ShowDialog();
 
@@ -338,7 +394,7 @@ namespace ControlaRelatorio.Forms
 
                 AtualizaGrids();
             }
-            
+
 
 
         }
@@ -351,7 +407,7 @@ namespace ControlaRelatorio.Forms
         {
 
             this.BuscarTelapesquisa();
-                       
+
         }
 
         private void dataGridPendenteNaoAtualizado_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -403,21 +459,21 @@ namespace ControlaRelatorio.Forms
 
         private void FrmManutencaoRelatorio_KeyDown(object sender, KeyEventArgs e)
         {
-           
+
             switch (e.KeyCode)
 
             {
 
-                case Keys.F5: 
+                case Keys.F5:
                     atualizarGridBtn_Click(sender, e);
                     break;
 
                 case Keys.F7:
-                   incluirRelatorioBtn_Click(sender, e);
+                    incluirRelatorioBtn_Click(sender, e);
                     break;
             }
 
-            }
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -492,8 +548,8 @@ namespace ControlaRelatorio.Forms
         {
             if (e.KeyChar == 13)
 
-            this.PesquisarTelaPrincipal();
-            
+                this.PesquisarTelaPrincipal();
+
         }
 
         private void MenuBtn_Click(object sender, EventArgs e)
@@ -501,7 +557,7 @@ namespace ControlaRelatorio.Forms
             // menu aberto modo relatorio
             if (MenuSize == true)
             {
-                if(ModoPrevisao == true)
+                if (ModoPrevisao == true)
                 {
                     ModoExibicaoPrevisaoMenuAberto();
                     DesabilitaComponentesRelatorio();
@@ -534,7 +590,7 @@ namespace ControlaRelatorio.Forms
 
             }
 
-          
+
 
 
 
@@ -592,11 +648,13 @@ namespace ControlaRelatorio.Forms
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
 
+
+
         }
 
         private void ExibirPrevisaoBtn_Click(object sender, EventArgs e)
         {
-            
+
 
 
             // Controle de Modo
@@ -617,6 +675,9 @@ namespace ControlaRelatorio.Forms
 
             ModoExibicaoPrevisaoMenuFechado();
 
+            IncluirPrevisaoBtn.Enabled = true;
+            IncluirPrevisaoTextBtn.Enabled = true;
+
         }
 
         private void ExibirPrevisaoTxtBtn_Click(object sender, EventArgs e)
@@ -636,7 +697,7 @@ namespace ControlaRelatorio.Forms
         private void ExibirRelatorioBtn_Click(object sender, EventArgs e)
         {
 
-            
+
             // Controle de Modo
             ModoRelatorio = true;
             ModoPrevisao = false;
@@ -654,7 +715,14 @@ namespace ControlaRelatorio.Forms
 
             ModoExibicaoRelatorioMenuFechado();
 
+            incluirRelatorioBtn.Enabled = true;
+            incluirRelatorioTextBtn.Enabled = true;
+            PesquisaNumRequisitoTelaPrincipalTbx.Visible = true;
+            pesquisarRelatorioBtn.Enabled = true;
 
+
+            IncluirPrevisaoBtn.Enabled = false;
+            IncluirPrevisaoTextBtn.Enabled = false;
 
 
 
@@ -685,5 +753,52 @@ namespace ControlaRelatorio.Forms
             */
 
         }
+
+        private void dataGridPrevisaoAbertoProgramacao_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+
+
+            RowsColor();
+        }
+
+        private void QtdVencidoLbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridCountAtendente_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            FrmCobrarRelatorioAtendente frmcobrarrelatorioatendente = new FrmCobrarRelatorioAtendente();
+
+
+            AtendenteClick = dataGridCountAtendente.SelectedRows[0].Cells[0].Value.ToString();
+
+            daoManutencaoRelarotio.PesquisarAtendenteCobrar(AtendenteClick);
+
+            frmcobrarrelatorioatendente.DataCobrarRelatorioAtndente.DataSource = daoManutencaoRelarotio.PesquisarAtendenteCobrar(AtendenteClick);
+
+
+            frmcobrarrelatorioatendente.ShowDialog();
+
+
+
+
+
+        }
+
+        private void dataGridPendenteTempo_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            RowsColorRelatorio();
+
+        }
+
+        private void DiasCountAtendenteTbx_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
+
+
+        
+    
 }

@@ -23,5 +23,10 @@ namespace ControlaRelatorio.Forms
 
                 this.Close();
         }
+
+        private void ResumoTbxBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

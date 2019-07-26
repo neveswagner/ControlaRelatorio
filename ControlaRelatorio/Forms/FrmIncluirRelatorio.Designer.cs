@@ -85,7 +85,7 @@
             this.clientTbx.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.clientTbx.Location = new System.Drawing.Point(168, 117);
             this.clientTbx.Name = "clientTbx";
-            this.clientTbx.Size = new System.Drawing.Size(100, 20);
+            this.clientTbx.Size = new System.Drawing.Size(212, 20);
             this.clientTbx.TabIndex = 1;
             // 
             // DtaInclusaoLbl
@@ -120,7 +120,7 @@
             this.atendenteTbx.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.atendenteTbx.Location = new System.Drawing.Point(168, 150);
             this.atendenteTbx.Name = "atendenteTbx";
-            this.atendenteTbx.Size = new System.Drawing.Size(100, 20);
+            this.atendenteTbx.Size = new System.Drawing.Size(212, 20);
             this.atendenteTbx.TabIndex = 2;
             // 
             // clienteAtualizadoLbl
@@ -264,7 +264,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Azure;
+            this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(414, 470);
             this.Controls.Add(this.requisitoAtualizacaoLbl);
             this.Controls.Add(this.requisitoAtualizacaoTbx);

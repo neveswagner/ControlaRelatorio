@@ -39,8 +39,6 @@
             this.validadoCbx = new System.Windows.Forms.ComboBox();
             this.validadeLbl = new System.Windows.Forms.Label();
             this.clienteAtualizadoLbl = new System.Windows.Forms.Label();
-            this.AtendenteLbl = new System.Windows.Forms.Label();
-            this.atendenteTbx = new System.Windows.Forms.TextBox();
             this.dtaInclusaoDtm = new System.Windows.Forms.DateTimePicker();
             this.DtaInclusaoLbl = new System.Windows.Forms.Label();
             this.clienteLbl = new System.Windows.Forms.Label();
@@ -57,7 +55,7 @@
             // 
             this.requisitoAtualizacaoLbl.AutoSize = true;
             this.requisitoAtualizacaoLbl.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.requisitoAtualizacaoLbl.Location = new System.Drawing.Point(16, 354);
+            this.requisitoAtualizacaoLbl.Location = new System.Drawing.Point(14, 320);
             this.requisitoAtualizacaoLbl.Name = "requisitoAtualizacaoLbl";
             this.requisitoAtualizacaoLbl.Size = new System.Drawing.Size(138, 18);
             this.requisitoAtualizacaoLbl.TabIndex = 70;
@@ -66,10 +64,10 @@
             // requisitoAtualizacaoTbx
             // 
             this.requisitoAtualizacaoTbx.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.requisitoAtualizacaoTbx.Location = new System.Drawing.Point(171, 352);
+            this.requisitoAtualizacaoTbx.Location = new System.Drawing.Point(169, 318);
             this.requisitoAtualizacaoTbx.Name = "requisitoAtualizacaoTbx";
-            this.requisitoAtualizacaoTbx.Size = new System.Drawing.Size(100, 20);
-            this.requisitoAtualizacaoTbx.TabIndex = 60;
+            this.requisitoAtualizacaoTbx.Size = new System.Drawing.Size(89, 20);
+            this.requisitoAtualizacaoTbx.TabIndex = 10;
             // 
             // label1
             // 
@@ -93,10 +91,10 @@
             // ObservacaoTbx
             // 
             this.ObservacaoTbx.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.ObservacaoTbx.Location = new System.Drawing.Point(171, 317);
+            this.ObservacaoTbx.Location = new System.Drawing.Point(169, 283);
             this.ObservacaoTbx.Name = "ObservacaoTbx";
             this.ObservacaoTbx.Size = new System.Drawing.Size(212, 20);
-            this.ObservacaoTbx.TabIndex = 59;
+            this.ObservacaoTbx.TabIndex = 9;
             // 
             // incluirRelatorioBtn
             // 
@@ -108,10 +106,10 @@
             this.incluirRelatorioBtn.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.incluirRelatorioBtn.Image = global::ControlaRelatorio.Properties.Resources.icons8_salvar_e_fechar_40;
             this.incluirRelatorioBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.incluirRelatorioBtn.Location = new System.Drawing.Point(146, 417);
+            this.incluirRelatorioBtn.Location = new System.Drawing.Point(146, 363);
             this.incluirRelatorioBtn.Name = "incluirRelatorioBtn";
             this.incluirRelatorioBtn.Size = new System.Drawing.Size(125, 47);
-            this.incluirRelatorioBtn.TabIndex = 63;
+            this.incluirRelatorioBtn.TabIndex = 11;
             this.incluirRelatorioBtn.Text = "Gravar F10";
             this.incluirRelatorioBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.incluirRelatorioBtn.UseVisualStyleBackColor = true;
@@ -121,7 +119,7 @@
             // 
             this.ObservacoesLbl.AutoSize = true;
             this.ObservacoesLbl.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ObservacoesLbl.Location = new System.Drawing.Point(69, 319);
+            this.ObservacoesLbl.Location = new System.Drawing.Point(67, 285);
             this.ObservacoesLbl.Name = "ObservacoesLbl";
             this.ObservacoesLbl.Size = new System.Drawing.Size(85, 18);
             this.ObservacoesLbl.TabIndex = 66;
@@ -133,10 +131,10 @@
             this.clienteAtualizadoCbx.Items.AddRange(new object[] {
             "S",
             "N"});
-            this.clienteAtualizadoCbx.Location = new System.Drawing.Point(171, 284);
+            this.clienteAtualizadoCbx.Location = new System.Drawing.Point(169, 250);
             this.clienteAtualizadoCbx.Name = "clienteAtualizadoCbx";
             this.clienteAtualizadoCbx.Size = new System.Drawing.Size(37, 21);
-            this.clienteAtualizadoCbx.TabIndex = 57;
+            this.clienteAtualizadoCbx.TabIndex = 8;
             this.clienteAtualizadoCbx.Text = "N";
             // 
             // validadoCbx
@@ -145,17 +143,17 @@
             this.validadoCbx.Items.AddRange(new object[] {
             "N",
             "S"});
-            this.validadoCbx.Location = new System.Drawing.Point(171, 219);
+            this.validadoCbx.Location = new System.Drawing.Point(169, 185);
             this.validadoCbx.Name = "validadoCbx";
             this.validadoCbx.Size = new System.Drawing.Size(37, 21);
-            this.validadoCbx.TabIndex = 56;
+            this.validadoCbx.TabIndex = 6;
             this.validadoCbx.Text = "N";
             // 
             // validadeLbl
             // 
             this.validadeLbl.AutoSize = true;
             this.validadeLbl.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.validadeLbl.Location = new System.Drawing.Point(93, 219);
+            this.validadeLbl.Location = new System.Drawing.Point(91, 185);
             this.validadeLbl.Name = "validadeLbl";
             this.validadeLbl.Size = new System.Drawing.Size(67, 18);
             this.validadeLbl.TabIndex = 65;
@@ -165,36 +163,18 @@
             // 
             this.clienteAtualizadoLbl.AutoSize = true;
             this.clienteAtualizadoLbl.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clienteAtualizadoLbl.Location = new System.Drawing.Point(35, 287);
+            this.clienteAtualizadoLbl.Location = new System.Drawing.Point(33, 253);
             this.clienteAtualizadoLbl.Name = "clienteAtualizadoLbl";
             this.clienteAtualizadoLbl.Size = new System.Drawing.Size(119, 18);
             this.clienteAtualizadoLbl.TabIndex = 64;
             this.clienteAtualizadoLbl.Text = "Cliente Atualizado";
-            // 
-            // AtendenteLbl
-            // 
-            this.AtendenteLbl.AutoSize = true;
-            this.AtendenteLbl.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AtendenteLbl.Location = new System.Drawing.Point(84, 186);
-            this.AtendenteLbl.Name = "AtendenteLbl";
-            this.AtendenteLbl.Size = new System.Drawing.Size(70, 18);
-            this.AtendenteLbl.TabIndex = 61;
-            this.AtendenteLbl.Text = "Atendente";
-            // 
-            // atendenteTbx
-            // 
-            this.atendenteTbx.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.atendenteTbx.Location = new System.Drawing.Point(171, 184);
-            this.atendenteTbx.Name = "atendenteTbx";
-            this.atendenteTbx.Size = new System.Drawing.Size(100, 20);
-            this.atendenteTbx.TabIndex = 54;
             // 
             // dtaInclusaoDtm
             // 
             this.dtaInclusaoDtm.Location = new System.Drawing.Point(171, 54);
             this.dtaInclusaoDtm.Name = "dtaInclusaoDtm";
             this.dtaInclusaoDtm.Size = new System.Drawing.Size(212, 20);
-            this.dtaInclusaoDtm.TabIndex = 71;
+            this.dtaInclusaoDtm.TabIndex = 2;
             // 
             // DtaInclusaoLbl
             // 
@@ -221,8 +201,8 @@
             this.clientTbx.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.clientTbx.Location = new System.Drawing.Point(171, 151);
             this.clientTbx.Name = "clientTbx";
-            this.clientTbx.Size = new System.Drawing.Size(100, 20);
-            this.clientTbx.TabIndex = 52;
+            this.clientTbx.Size = new System.Drawing.Size(212, 20);
+            this.clientTbx.TabIndex = 5;
             // 
             // requisitoLbl
             // 
@@ -239,15 +219,15 @@
             this.requisitoTbx.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.requisitoTbx.Location = new System.Drawing.Point(171, 118);
             this.requisitoTbx.Name = "requisitoTbx";
-            this.requisitoTbx.Size = new System.Drawing.Size(100, 20);
-            this.requisitoTbx.TabIndex = 51;
+            this.requisitoTbx.Size = new System.Drawing.Size(87, 20);
+            this.requisitoTbx.TabIndex = 4;
             // 
             // dtaPrevisaoDtm
             // 
             this.dtaPrevisaoDtm.Location = new System.Drawing.Point(171, 88);
             this.dtaPrevisaoDtm.Name = "dtaPrevisaoDtm";
             this.dtaPrevisaoDtm.Size = new System.Drawing.Size(212, 20);
-            this.dtaPrevisaoDtm.TabIndex = 73;
+            this.dtaPrevisaoDtm.TabIndex = 3;
             // 
             // label2
             // 
@@ -265,17 +245,17 @@
             this.baixadoProgramacaoCbx.Items.AddRange(new object[] {
             "S",
             "N"});
-            this.baixadoProgramacaoCbx.Location = new System.Drawing.Point(171, 251);
+            this.baixadoProgramacaoCbx.Location = new System.Drawing.Point(169, 217);
             this.baixadoProgramacaoCbx.Name = "baixadoProgramacaoCbx";
             this.baixadoProgramacaoCbx.Size = new System.Drawing.Size(37, 21);
-            this.baixadoProgramacaoCbx.TabIndex = 74;
+            this.baixadoProgramacaoCbx.TabIndex = 7;
             this.baixadoProgramacaoCbx.Text = "S";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(22, 254);
+            this.label3.Location = new System.Drawing.Point(20, 220);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(138, 18);
             this.label3.TabIndex = 75;
@@ -285,7 +265,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(399, 504);
+            this.ClientSize = new System.Drawing.Size(399, 431);
             this.Controls.Add(this.baixadoProgramacaoCbx);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dtaPrevisaoDtm);
@@ -301,8 +281,6 @@
             this.Controls.Add(this.validadoCbx);
             this.Controls.Add(this.validadeLbl);
             this.Controls.Add(this.clienteAtualizadoLbl);
-            this.Controls.Add(this.AtendenteLbl);
-            this.Controls.Add(this.atendenteTbx);
             this.Controls.Add(this.dtaInclusaoDtm);
             this.Controls.Add(this.DtaInclusaoLbl);
             this.Controls.Add(this.clienteLbl);
@@ -310,9 +288,11 @@
             this.Controls.Add(this.requisitoLbl);
             this.Controls.Add(this.requisitoTbx);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.KeyPreview = true;
             this.Name = "FrmIncluirPrevisao";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Incluir Previsao";
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FrmIncluirPrevisao_KeyPress);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -331,8 +311,6 @@
         public System.Windows.Forms.ComboBox validadoCbx;
         public System.Windows.Forms.Label validadeLbl;
         public System.Windows.Forms.Label clienteAtualizadoLbl;
-        public System.Windows.Forms.Label AtendenteLbl;
-        public System.Windows.Forms.TextBox atendenteTbx;
         public System.Windows.Forms.DateTimePicker dtaInclusaoDtm;
         public System.Windows.Forms.Label DtaInclusaoLbl;
         public System.Windows.Forms.Label clienteLbl;

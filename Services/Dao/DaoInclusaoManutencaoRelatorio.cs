@@ -521,5 +521,64 @@ namespace Services.Dao
         }
 
 
+        public List<ManutencaoRelatorio> PesquisarAtendenteCobrar(string AtendenteClick)
+        {
+            List<ManutencaoRelatorio> PesquisarAtendenteCobrar = new List<ManutencaoRelatorio>();
+            MySqlConnection conn = new ConexaoBancoMySQL().getConnection();
+            conn = new MySqlConnection(connectionString);
+            String selecionaTodos = "SELECT id_relatorio, " +
+                                    "dtainclusao,  " +
+                                    "requisito, " +
+                                    "cliente, " +
+                                    "atendente,  " +
+                                    "pendente_status, " +
+                                    "observacao," +
+                                    "cliente_atualizado," +
+                                    "pendente_status," +
+                                    "requisito_correcao," +
+                                    "requisito_atualizacao " +
+                                    "FROM relatorio " +
+                                    "where pendente_status = 'N'" +
+                                    "AND cliente_atualizado = 'S' " +
+                                    "and requisito_correcao = ''  " +                                                                   
+                                   "and atendente like '%" + @AtendenteClick + "%'";
+                                    
+            conn.Open();
+            MySql.Data.MySqlClient.MySqlCommand cmd = new MySql.Data.MySqlClient.MySqlCommand(selecionaTodos, conn);
+            
+            cmd.Parameters.Add(new MySql.Data.MySqlClient.MySqlParameter("AtendenteClick", AtendenteClick));
+            
+
+
+            try
+            {
+
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+
+                while (reader.Read())
+                {
+                    ManutencaoRelatorio novo = new ManutencaoRelatorio();
+
+
+                    novo.Requisito = reader["requisito"].ToString();
+                    novo.Cliente = reader["cliente"].ToString();
+
+                    PesquisarAtendenteCobrar.Add(novo);
+                 
+                }
+                
+                conn.Close();
+                return PesquisarAtendenteCobrar;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+
+
+
     }
 }
