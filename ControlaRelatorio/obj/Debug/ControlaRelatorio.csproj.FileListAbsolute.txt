@@ -60,7 +60,6 @@ F:\Users\wagner.neves\Documents\GitHub\ControlaRelatorio\ControlaRelatorio\bin\D
 F:\Users\wagner.neves\Documents\GitHub\ControlaRelatorio\ControlaRelatorio\bin\Debug\Services.dll.config
 F:\Users\wagner.neves\Documents\GitHub\ControlaRelatorio\ControlaRelatorio\bin\Debug\Chart.Mvc.pdb
 F:\Users\wagner.neves\Documents\GitHub\ControlaRelatorio\ControlaRelatorio\bin\Debug\Chart.Mvc.xml
-F:\Users\wagner.neves\Documents\GitHub\ControlaRelatorio\ControlaRelatorio\bin\Debug\MySql.Data.xml
 F:\Users\wagner.neves\Documents\GitHub\ControlaRelatorio\ControlaRelatorio\bin\Debug\Newtonsoft.Json.xml
 F:\Users\wagner.neves\Documents\GitHub\ControlaRelatorio\ControlaRelatorio\bin\Debug\System.Web.Helpers.xml
 F:\Users\wagner.neves\Documents\GitHub\ControlaRelatorio\ControlaRelatorio\bin\Debug\System.Web.Mvc.xml
@@ -128,3 +127,5 @@ F:\Users\wagner.neves\Documents\ultimo\ControlaRelatorio\ControlaRelatorio\obj\D
 F:\Users\wagner.neves\Documents\GitHub\ControlaRelatorio\ControlaRelatorio\obj\Debug\ControlaRelatorio.Forms.FrmIncluirPrevisao.resources
 F:\Users\wagner.neves\Documents\ultimo\ControlaRelatorio\ControlaRelatorio\obj\Debug\ControlaRelatorio.Forms.FrmIncluirPrevisao.resources
 F:\Users\wagner.neves\Documents\GitHub\ControlaRelatorio\ControlaRelatorio\obj\Debug\ControlaRelatorio.Forms.FrmCobrarRelatorioAtendente.resources
+F:\Users\wagner.neves\Documents\GitHub\ControlaRelatorio\ControlaRelatorio\bin\Debug\MySql.Data.dll
+F:\Users\wagner.neves\Documents\GitHub\ControlaRelatorio\ControlaRelatorio\bin\Debug\MySqlBackup.dll

@@ -33,7 +33,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.id_relatorioTbx = new System.Windows.Forms.TextBox();
             this.ObservacaoTbx = new System.Windows.Forms.TextBox();
-            this.incluirRelatorioBtn = new System.Windows.Forms.Button();
+            this.incluirPrevisaoBtn = new System.Windows.Forms.Button();
             this.ObservacoesLbl = new System.Windows.Forms.Label();
             this.clienteAtualizadoCbx = new System.Windows.Forms.ComboBox();
             this.validadoCbx = new System.Windows.Forms.ComboBox();
@@ -96,24 +96,24 @@
             this.ObservacaoTbx.Size = new System.Drawing.Size(212, 20);
             this.ObservacaoTbx.TabIndex = 9;
             // 
-            // incluirRelatorioBtn
+            // incluirPrevisaoBtn
             // 
-            this.incluirRelatorioBtn.FlatAppearance.BorderColor = System.Drawing.Color.DarkOrange;
-            this.incluirRelatorioBtn.FlatAppearance.BorderSize = 2;
-            this.incluirRelatorioBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightCyan;
-            this.incluirRelatorioBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightCyan;
-            this.incluirRelatorioBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.incluirRelatorioBtn.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.incluirRelatorioBtn.Image = global::ControlaRelatorio.Properties.Resources.icons8_salvar_e_fechar_40;
-            this.incluirRelatorioBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.incluirRelatorioBtn.Location = new System.Drawing.Point(146, 363);
-            this.incluirRelatorioBtn.Name = "incluirRelatorioBtn";
-            this.incluirRelatorioBtn.Size = new System.Drawing.Size(125, 47);
-            this.incluirRelatorioBtn.TabIndex = 11;
-            this.incluirRelatorioBtn.Text = "Gravar F10";
-            this.incluirRelatorioBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.incluirRelatorioBtn.UseVisualStyleBackColor = true;
-            this.incluirRelatorioBtn.Click += new System.EventHandler(this.incluirRelatorioBtn_Click);
+            this.incluirPrevisaoBtn.FlatAppearance.BorderColor = System.Drawing.Color.DarkOrange;
+            this.incluirPrevisaoBtn.FlatAppearance.BorderSize = 2;
+            this.incluirPrevisaoBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightCyan;
+            this.incluirPrevisaoBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightCyan;
+            this.incluirPrevisaoBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.incluirPrevisaoBtn.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.incluirPrevisaoBtn.Image = global::ControlaRelatorio.Properties.Resources.icons8_salvar_e_fechar_40;
+            this.incluirPrevisaoBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.incluirPrevisaoBtn.Location = new System.Drawing.Point(146, 363);
+            this.incluirPrevisaoBtn.Name = "incluirPrevisaoBtn";
+            this.incluirPrevisaoBtn.Size = new System.Drawing.Size(125, 47);
+            this.incluirPrevisaoBtn.TabIndex = 11;
+            this.incluirPrevisaoBtn.Text = "Gravar F10";
+            this.incluirPrevisaoBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.incluirPrevisaoBtn.UseVisualStyleBackColor = true;
+            this.incluirPrevisaoBtn.Click += new System.EventHandler(this.incluirRelatorioBtn_Click);
             // 
             // ObservacoesLbl
             // 
@@ -275,7 +275,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.id_relatorioTbx);
             this.Controls.Add(this.ObservacaoTbx);
-            this.Controls.Add(this.incluirRelatorioBtn);
+            this.Controls.Add(this.incluirPrevisaoBtn);
             this.Controls.Add(this.ObservacoesLbl);
             this.Controls.Add(this.clienteAtualizadoCbx);
             this.Controls.Add(this.validadoCbx);
@@ -292,6 +292,8 @@
             this.Name = "FrmIncluirPrevisao";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Incluir Previsao";
+            this.Load += new System.EventHandler(this.FrmIncluirPrevisao_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmIncluirPrevisao_KeyDown);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FrmIncluirPrevisao_KeyPress);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -305,7 +307,7 @@
         public System.Windows.Forms.Label label1;
         public System.Windows.Forms.TextBox id_relatorioTbx;
         public System.Windows.Forms.TextBox ObservacaoTbx;
-        public System.Windows.Forms.Button incluirRelatorioBtn;
+        public System.Windows.Forms.Button incluirPrevisaoBtn;
         public System.Windows.Forms.Label ObservacoesLbl;
         public System.Windows.Forms.ComboBox clienteAtualizadoCbx;
         public System.Windows.Forms.ComboBox validadoCbx;

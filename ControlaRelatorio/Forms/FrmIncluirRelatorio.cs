@@ -152,8 +152,8 @@ namespace ControlaRelatorio.Forms
         {
             if (e.KeyCode == Keys.Enter)
             {
-
-                this.SelectNextControl(this.ActiveControl, !e.Shift, true, true, true);
+             
+                //this.SelectNextControl(this.ActiveControl, !e.Shift, true, true, true);
 
             }
         }
@@ -163,6 +163,9 @@ namespace ControlaRelatorio.Forms
             if (e.KeyChar == 27)
 
                 this.Close();
+
+            if (e.KeyChar == (char)13)
+                SendKeys.Send("{TAB}");
         }
 
         private void FrmIncluirRelatorio_KeyUp(object sender, KeyEventArgs e)

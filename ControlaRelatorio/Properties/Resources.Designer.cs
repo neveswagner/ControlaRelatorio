@@ -73,6 +73,36 @@ namespace ControlaRelatorio.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_backup_de_dados_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-backup-de-dados-30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_backup_de_dados_36 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-backup-de-dados-36", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_backup_de_dados_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-backup-de-dados-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_bebê_chorando_36 {
             get {
                 object obj = ResourceManager.GetObject("icons8-bebê-chorando-36", resourceCulture);

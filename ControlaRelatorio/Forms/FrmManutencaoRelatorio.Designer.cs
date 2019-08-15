@@ -39,7 +39,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmManutencaoRelatorio));
-            this.relatorioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridPendenteNaoAtualizado = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -75,15 +74,8 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.abertoNaProgramacaoLbl = new System.Windows.Forms.Label();
             this.PesquisaNumRequisitoTelaPrincipalTbx = new System.Windows.Forms.TextBox();
-            this.exibirPrevisaoBtn = new System.Windows.Forms.Button();
-            this.exibirRelatorioBtn = new System.Windows.Forms.Button();
-            this.IncluirPrevisaoBtn = new System.Windows.Forms.Button();
-            this.AtualizarGrids = new System.Windows.Forms.Button();
-            this.pesquisarRelatorioBtn = new System.Windows.Forms.Button();
-            this.incluirRelatorioBtn = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.MenuPnl = new System.Windows.Forms.Panel();
-            this.MenuBtn = new System.Windows.Forms.Button();
             this.incluirRelatorioTextBtn = new System.Windows.Forms.Button();
             this.ePnl = new System.Windows.Forms.Panel();
             this.exibirPrevisaoTxtBtn = new System.Windows.Forms.Button();
@@ -106,20 +98,27 @@
             this.Column22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.QtdVencidoLbl = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.relatorioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.button3 = new System.Windows.Forms.Button();
+            this.exibirPrevisaoBtn = new System.Windows.Forms.Button();
+            this.exibirRelatorioBtn = new System.Windows.Forms.Button();
+            this.IncluirPrevisaoBtn = new System.Windows.Forms.Button();
+            this.AtualizarGrids = new System.Windows.Forms.Button();
+            this.pesquisarRelatorioBtn = new System.Windows.Forms.Button();
+            this.incluirRelatorioBtn = new System.Windows.Forms.Button();
+            this.MenuBtn = new System.Windows.Forms.Button();
             this.controlerelatorioDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.relatorioBindingSource)).BeginInit();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPendenteNaoAtualizado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPendenteTempo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridCountAtendente)).BeginInit();
             this.MenuPnl.SuspendLayout();
             this.ePnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPrevisaoAbertoProgramacao)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.relatorioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.controlerelatorioDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // relatorioBindingSource
-            // 
-            this.relatorioBindingSource.DataMember = "relatorio";
             // 
             // dataGridPendenteNaoAtualizado
             // 
@@ -155,12 +154,12 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridPendenteNaoAtualizado.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridPendenteNaoAtualizado.Location = new System.Drawing.Point(651, 275);
+            this.dataGridPendenteNaoAtualizado.Location = new System.Drawing.Point(651, 56);
             this.dataGridPendenteNaoAtualizado.Name = "dataGridPendenteNaoAtualizado";
             this.dataGridPendenteNaoAtualizado.ReadOnly = true;
             this.dataGridPendenteNaoAtualizado.RowHeadersVisible = false;
             this.dataGridPendenteNaoAtualizado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridPendenteNaoAtualizado.Size = new System.Drawing.Size(595, 227);
+            this.dataGridPendenteNaoAtualizado.Size = new System.Drawing.Size(509, 628);
             this.dataGridPendenteNaoAtualizado.TabIndex = 2;
             this.dataGridPendenteNaoAtualizado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridPendenteNaoAtualizado_CellContentClick);
             this.dataGridPendenteNaoAtualizado.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridPendenteNaoAtualizado_CellDoubleClick);
@@ -428,12 +427,12 @@
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridCountAtendente.DefaultCellStyle = dataGridViewCellStyle7;
-            this.dataGridCountAtendente.Location = new System.Drawing.Point(1258, 56);
+            this.dataGridCountAtendente.Location = new System.Drawing.Point(1186, 56);
             this.dataGridCountAtendente.Name = "dataGridCountAtendente";
             this.dataGridCountAtendente.ReadOnly = true;
             this.dataGridCountAtendente.RowHeadersVisible = false;
             this.dataGridCountAtendente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridCountAtendente.Size = new System.Drawing.Size(166, 378);
+            this.dataGridCountAtendente.Size = new System.Drawing.Size(166, 611);
             this.dataGridCountAtendente.TabIndex = 11;
             this.dataGridCountAtendente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridCountAtendente.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridCountAtendente_CellDoubleClick);
@@ -508,131 +507,6 @@
             this.PesquisaNumRequisitoTelaPrincipalTbx.TextChanged += new System.EventHandler(this.PesquisaNumRequisitoTelaPrincipalTbx_TextChanged);
             this.PesquisaNumRequisitoTelaPrincipalTbx.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PesquisaNumRequisitoTelaPrincipalTbx_KeyPress);
             // 
-            // exibirPrevisaoBtn
-            // 
-            this.exibirPrevisaoBtn.AutoSize = true;
-            this.exibirPrevisaoBtn.BackColor = System.Drawing.Color.Transparent;
-            this.exibirPrevisaoBtn.FlatAppearance.BorderColor = System.Drawing.Color.Firebrick;
-            this.exibirPrevisaoBtn.FlatAppearance.BorderSize = 0;
-            this.exibirPrevisaoBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.exibirPrevisaoBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Firebrick;
-            this.exibirPrevisaoBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.exibirPrevisaoBtn.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exibirPrevisaoBtn.Image = global::ControlaRelatorio.Properties.Resources.icons8_p_28;
-            this.exibirPrevisaoBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.exibirPrevisaoBtn.Location = new System.Drawing.Point(12, 313);
-            this.exibirPrevisaoBtn.Name = "exibirPrevisaoBtn";
-            this.exibirPrevisaoBtn.Size = new System.Drawing.Size(42, 50);
-            this.exibirPrevisaoBtn.TabIndex = 26;
-            this.exibirPrevisaoBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.toolTip1.SetToolTip(this.exibirPrevisaoBtn, "Alternar Para Modo Previsao");
-            this.exibirPrevisaoBtn.UseVisualStyleBackColor = false;
-            this.exibirPrevisaoBtn.Click += new System.EventHandler(this.ExibirPrevisaoBtn_Click);
-            // 
-            // exibirRelatorioBtn
-            // 
-            this.exibirRelatorioBtn.AutoSize = true;
-            this.exibirRelatorioBtn.BackColor = System.Drawing.Color.Transparent;
-            this.exibirRelatorioBtn.FlatAppearance.BorderColor = System.Drawing.Color.Firebrick;
-            this.exibirRelatorioBtn.FlatAppearance.BorderSize = 0;
-            this.exibirRelatorioBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.exibirRelatorioBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Firebrick;
-            this.exibirRelatorioBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.exibirRelatorioBtn.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exibirRelatorioBtn.Image = global::ControlaRelatorio.Properties.Resources.icons8_r_28;
-            this.exibirRelatorioBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.exibirRelatorioBtn.Location = new System.Drawing.Point(12, 313);
-            this.exibirRelatorioBtn.Name = "exibirRelatorioBtn";
-            this.exibirRelatorioBtn.Size = new System.Drawing.Size(40, 50);
-            this.exibirRelatorioBtn.TabIndex = 25;
-            this.exibirRelatorioBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.toolTip1.SetToolTip(this.exibirRelatorioBtn, "Alternar Para Modo Pelatorio");
-            this.exibirRelatorioBtn.UseVisualStyleBackColor = false;
-            this.exibirRelatorioBtn.Visible = false;
-            this.exibirRelatorioBtn.Click += new System.EventHandler(this.ExibirRelatorioBtn_Click);
-            // 
-            // IncluirPrevisaoBtn
-            // 
-            this.IncluirPrevisaoBtn.AutoSize = true;
-            this.IncluirPrevisaoBtn.BackColor = System.Drawing.Color.Transparent;
-            this.IncluirPrevisaoBtn.FlatAppearance.BorderColor = System.Drawing.Color.Firebrick;
-            this.IncluirPrevisaoBtn.FlatAppearance.BorderSize = 0;
-            this.IncluirPrevisaoBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.IncluirPrevisaoBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Firebrick;
-            this.IncluirPrevisaoBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.IncluirPrevisaoBtn.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IncluirPrevisaoBtn.Image = global::ControlaRelatorio.Properties.Resources.icons8_inserir_linha_acima_32;
-            this.IncluirPrevisaoBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.IncluirPrevisaoBtn.Location = new System.Drawing.Point(10, 265);
-            this.IncluirPrevisaoBtn.Name = "IncluirPrevisaoBtn";
-            this.IncluirPrevisaoBtn.Size = new System.Drawing.Size(42, 42);
-            this.IncluirPrevisaoBtn.TabIndex = 24;
-            this.IncluirPrevisaoBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.toolTip1.SetToolTip(this.IncluirPrevisaoBtn, "Incluir Previsao");
-            this.IncluirPrevisaoBtn.UseVisualStyleBackColor = false;
-            this.IncluirPrevisaoBtn.Click += new System.EventHandler(this.button4_Click_1);
-            // 
-            // AtualizarGrids
-            // 
-            this.AtualizarGrids.BackColor = System.Drawing.Color.Transparent;
-            this.AtualizarGrids.FlatAppearance.BorderColor = System.Drawing.Color.Firebrick;
-            this.AtualizarGrids.FlatAppearance.BorderSize = 0;
-            this.AtualizarGrids.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.AtualizarGrids.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Firebrick;
-            this.AtualizarGrids.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AtualizarGrids.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AtualizarGrids.Image = global::ControlaRelatorio.Properties.Resources.icons8_sincronizar_conexão_40;
-            this.AtualizarGrids.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.AtualizarGrids.Location = new System.Drawing.Point(10, 207);
-            this.AtualizarGrids.Name = "AtualizarGrids";
-            this.AtualizarGrids.Size = new System.Drawing.Size(46, 52);
-            this.AtualizarGrids.TabIndex = 23;
-            this.AtualizarGrids.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.toolTip1.SetToolTip(this.AtualizarGrids, "Atualizar Grids");
-            this.AtualizarGrids.UseVisualStyleBackColor = false;
-            this.AtualizarGrids.Click += new System.EventHandler(this.AtualizarGrids_Click);
-            // 
-            // pesquisarRelatorioBtn
-            // 
-            this.pesquisarRelatorioBtn.BackColor = System.Drawing.Color.Transparent;
-            this.pesquisarRelatorioBtn.FlatAppearance.BorderColor = System.Drawing.Color.Firebrick;
-            this.pesquisarRelatorioBtn.FlatAppearance.BorderSize = 0;
-            this.pesquisarRelatorioBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.pesquisarRelatorioBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Firebrick;
-            this.pesquisarRelatorioBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.pesquisarRelatorioBtn.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pesquisarRelatorioBtn.Image = global::ControlaRelatorio.Properties.Resources.icons8_pesquisar_32;
-            this.pesquisarRelatorioBtn.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.pesquisarRelatorioBtn.Location = new System.Drawing.Point(10, 159);
-            this.pesquisarRelatorioBtn.Name = "pesquisarRelatorioBtn";
-            this.pesquisarRelatorioBtn.Size = new System.Drawing.Size(42, 42);
-            this.pesquisarRelatorioBtn.TabIndex = 22;
-            this.pesquisarRelatorioBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.toolTip1.SetToolTip(this.pesquisarRelatorioBtn, "Pesquisar Relatorio");
-            this.pesquisarRelatorioBtn.UseVisualStyleBackColor = false;
-            this.pesquisarRelatorioBtn.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // incluirRelatorioBtn
-            // 
-            this.incluirRelatorioBtn.AutoSize = true;
-            this.incluirRelatorioBtn.BackColor = System.Drawing.Color.Transparent;
-            this.incluirRelatorioBtn.FlatAppearance.BorderColor = System.Drawing.Color.Firebrick;
-            this.incluirRelatorioBtn.FlatAppearance.BorderSize = 0;
-            this.incluirRelatorioBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.incluirRelatorioBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Firebrick;
-            this.incluirRelatorioBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.incluirRelatorioBtn.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.incluirRelatorioBtn.Image = global::ControlaRelatorio.Properties.Resources.icons8_inserir_página_32;
-            this.incluirRelatorioBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.incluirRelatorioBtn.Location = new System.Drawing.Point(10, 111);
-            this.incluirRelatorioBtn.Name = "incluirRelatorioBtn";
-            this.incluirRelatorioBtn.Size = new System.Drawing.Size(40, 42);
-            this.incluirRelatorioBtn.TabIndex = 15;
-            this.incluirRelatorioBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.toolTip1.SetToolTip(this.incluirRelatorioBtn, "Incluir Relatorio");
-            this.incluirRelatorioBtn.UseVisualStyleBackColor = false;
-            this.incluirRelatorioBtn.Click += new System.EventHandler(this.button1_Click_1);
-            // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.Transparent;
@@ -657,6 +531,7 @@
             // 
             this.MenuPnl.AutoSize = true;
             this.MenuPnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(127)))), ((int)(((byte)(255)))));
+            this.MenuPnl.Controls.Add(this.button3);
             this.MenuPnl.Controls.Add(this.exibirPrevisaoBtn);
             this.MenuPnl.Controls.Add(this.exibirRelatorioBtn);
             this.MenuPnl.Controls.Add(this.IncluirPrevisaoBtn);
@@ -667,29 +542,9 @@
             this.MenuPnl.Controls.Add(this.MenuBtn);
             this.MenuPnl.Location = new System.Drawing.Point(-2, 0);
             this.MenuPnl.Name = "MenuPnl";
-            this.MenuPnl.Size = new System.Drawing.Size(66, 923);
+            this.MenuPnl.Size = new System.Drawing.Size(69, 923);
             this.MenuPnl.TabIndex = 20;
             this.MenuPnl.Paint += new System.Windows.Forms.PaintEventHandler(this.MenuPnl_Paint);
-            // 
-            // MenuBtn
-            // 
-            this.MenuBtn.AutoSize = true;
-            this.MenuBtn.BackColor = System.Drawing.Color.Transparent;
-            this.MenuBtn.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.MenuBtn.FlatAppearance.BorderSize = 0;
-            this.MenuBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.MenuBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.MenuBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.MenuBtn.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MenuBtn.Image = global::ControlaRelatorio.Properties.Resources.icons8_cardápio_32;
-            this.MenuBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.MenuBtn.Location = new System.Drawing.Point(3, 3);
-            this.MenuBtn.Name = "MenuBtn";
-            this.MenuBtn.Size = new System.Drawing.Size(49, 42);
-            this.MenuBtn.TabIndex = 14;
-            this.MenuBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.MenuBtn.UseVisualStyleBackColor = false;
-            this.MenuBtn.Click += new System.EventHandler(this.MenuBtn_Click);
             // 
             // incluirRelatorioTextBtn
             // 
@@ -716,6 +571,7 @@
             // 
             this.ePnl.AutoSize = true;
             this.ePnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(127)))), ((int)(((byte)(255)))));
+            this.ePnl.Controls.Add(this.button1);
             this.ePnl.Controls.Add(this.exibirPrevisaoTxtBtn);
             this.ePnl.Controls.Add(this.exibirRelatorioTxtBtn);
             this.ePnl.Controls.Add(this.IncluirPrevisaoTextBtn);
@@ -725,7 +581,7 @@
             this.ePnl.Controls.Add(this.button2);
             this.ePnl.Location = new System.Drawing.Point(56, 0);
             this.ePnl.Name = "ePnl";
-            this.ePnl.Size = new System.Drawing.Size(190, 941);
+            this.ePnl.Size = new System.Drawing.Size(203, 941);
             this.ePnl.TabIndex = 21;
             this.ePnl.Visible = false;
             // 
@@ -975,12 +831,209 @@
             this.QtdVencidoLbl.Text = "0";
             this.QtdVencidoLbl.Click += new System.EventHandler(this.QtdVencidoLbl_Click);
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // relatorioBindingSource
+            // 
+            this.relatorioBindingSource.DataMember = "relatorio";
+            // 
+            // button3
+            // 
+            this.button3.AutoSize = true;
+            this.button3.BackColor = System.Drawing.Color.Transparent;
+            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.Firebrick;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Firebrick;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Image = global::ControlaRelatorio.Properties.Resources.icons8_backup_de_dados_30;
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button3.Location = new System.Drawing.Point(-2, 581);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(56, 56);
+            this.button3.TabIndex = 27;
+            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.toolTip1.SetToolTip(this.button3, "Alternar Para Modo Previsao");
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click_1);
+            // 
+            // exibirPrevisaoBtn
+            // 
+            this.exibirPrevisaoBtn.AutoSize = true;
+            this.exibirPrevisaoBtn.BackColor = System.Drawing.Color.Transparent;
+            this.exibirPrevisaoBtn.FlatAppearance.BorderColor = System.Drawing.Color.Firebrick;
+            this.exibirPrevisaoBtn.FlatAppearance.BorderSize = 0;
+            this.exibirPrevisaoBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.exibirPrevisaoBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Firebrick;
+            this.exibirPrevisaoBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.exibirPrevisaoBtn.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exibirPrevisaoBtn.Image = global::ControlaRelatorio.Properties.Resources.icons8_p_28;
+            this.exibirPrevisaoBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.exibirPrevisaoBtn.Location = new System.Drawing.Point(12, 313);
+            this.exibirPrevisaoBtn.Name = "exibirPrevisaoBtn";
+            this.exibirPrevisaoBtn.Size = new System.Drawing.Size(42, 50);
+            this.exibirPrevisaoBtn.TabIndex = 26;
+            this.exibirPrevisaoBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.toolTip1.SetToolTip(this.exibirPrevisaoBtn, "Alternar Para Modo Previsao");
+            this.exibirPrevisaoBtn.UseVisualStyleBackColor = false;
+            this.exibirPrevisaoBtn.Click += new System.EventHandler(this.ExibirPrevisaoBtn_Click);
+            // 
+            // exibirRelatorioBtn
+            // 
+            this.exibirRelatorioBtn.AutoSize = true;
+            this.exibirRelatorioBtn.BackColor = System.Drawing.Color.Transparent;
+            this.exibirRelatorioBtn.FlatAppearance.BorderColor = System.Drawing.Color.Firebrick;
+            this.exibirRelatorioBtn.FlatAppearance.BorderSize = 0;
+            this.exibirRelatorioBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.exibirRelatorioBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Firebrick;
+            this.exibirRelatorioBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.exibirRelatorioBtn.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exibirRelatorioBtn.Image = global::ControlaRelatorio.Properties.Resources.icons8_r_28;
+            this.exibirRelatorioBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.exibirRelatorioBtn.Location = new System.Drawing.Point(12, 313);
+            this.exibirRelatorioBtn.Name = "exibirRelatorioBtn";
+            this.exibirRelatorioBtn.Size = new System.Drawing.Size(40, 50);
+            this.exibirRelatorioBtn.TabIndex = 25;
+            this.exibirRelatorioBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.toolTip1.SetToolTip(this.exibirRelatorioBtn, "Alternar Para Modo Pelatorio");
+            this.exibirRelatorioBtn.UseVisualStyleBackColor = false;
+            this.exibirRelatorioBtn.Visible = false;
+            this.exibirRelatorioBtn.Click += new System.EventHandler(this.ExibirRelatorioBtn_Click);
+            // 
+            // IncluirPrevisaoBtn
+            // 
+            this.IncluirPrevisaoBtn.AutoSize = true;
+            this.IncluirPrevisaoBtn.BackColor = System.Drawing.Color.Transparent;
+            this.IncluirPrevisaoBtn.FlatAppearance.BorderColor = System.Drawing.Color.Firebrick;
+            this.IncluirPrevisaoBtn.FlatAppearance.BorderSize = 0;
+            this.IncluirPrevisaoBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.IncluirPrevisaoBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Firebrick;
+            this.IncluirPrevisaoBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.IncluirPrevisaoBtn.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IncluirPrevisaoBtn.Image = global::ControlaRelatorio.Properties.Resources.icons8_inserir_linha_acima_32;
+            this.IncluirPrevisaoBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.IncluirPrevisaoBtn.Location = new System.Drawing.Point(10, 265);
+            this.IncluirPrevisaoBtn.Name = "IncluirPrevisaoBtn";
+            this.IncluirPrevisaoBtn.Size = new System.Drawing.Size(42, 42);
+            this.IncluirPrevisaoBtn.TabIndex = 24;
+            this.IncluirPrevisaoBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.toolTip1.SetToolTip(this.IncluirPrevisaoBtn, "Incluir Previsao");
+            this.IncluirPrevisaoBtn.UseVisualStyleBackColor = false;
+            this.IncluirPrevisaoBtn.Click += new System.EventHandler(this.button4_Click_1);
+            // 
+            // AtualizarGrids
+            // 
+            this.AtualizarGrids.BackColor = System.Drawing.Color.Transparent;
+            this.AtualizarGrids.FlatAppearance.BorderColor = System.Drawing.Color.Firebrick;
+            this.AtualizarGrids.FlatAppearance.BorderSize = 0;
+            this.AtualizarGrids.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.AtualizarGrids.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Firebrick;
+            this.AtualizarGrids.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AtualizarGrids.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AtualizarGrids.Image = global::ControlaRelatorio.Properties.Resources.icons8_sincronizar_conexão_40;
+            this.AtualizarGrids.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.AtualizarGrids.Location = new System.Drawing.Point(10, 207);
+            this.AtualizarGrids.Name = "AtualizarGrids";
+            this.AtualizarGrids.Size = new System.Drawing.Size(46, 52);
+            this.AtualizarGrids.TabIndex = 23;
+            this.AtualizarGrids.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.toolTip1.SetToolTip(this.AtualizarGrids, "Atualizar Grids");
+            this.AtualizarGrids.UseVisualStyleBackColor = false;
+            this.AtualizarGrids.Click += new System.EventHandler(this.AtualizarGrids_Click);
+            // 
+            // pesquisarRelatorioBtn
+            // 
+            this.pesquisarRelatorioBtn.BackColor = System.Drawing.Color.Transparent;
+            this.pesquisarRelatorioBtn.FlatAppearance.BorderColor = System.Drawing.Color.Firebrick;
+            this.pesquisarRelatorioBtn.FlatAppearance.BorderSize = 0;
+            this.pesquisarRelatorioBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.pesquisarRelatorioBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Firebrick;
+            this.pesquisarRelatorioBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.pesquisarRelatorioBtn.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pesquisarRelatorioBtn.Image = global::ControlaRelatorio.Properties.Resources.icons8_pesquisar_32;
+            this.pesquisarRelatorioBtn.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.pesquisarRelatorioBtn.Location = new System.Drawing.Point(10, 159);
+            this.pesquisarRelatorioBtn.Name = "pesquisarRelatorioBtn";
+            this.pesquisarRelatorioBtn.Size = new System.Drawing.Size(42, 42);
+            this.pesquisarRelatorioBtn.TabIndex = 22;
+            this.pesquisarRelatorioBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.toolTip1.SetToolTip(this.pesquisarRelatorioBtn, "Pesquisar Relatorio");
+            this.pesquisarRelatorioBtn.UseVisualStyleBackColor = false;
+            this.pesquisarRelatorioBtn.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // incluirRelatorioBtn
+            // 
+            this.incluirRelatorioBtn.AutoSize = true;
+            this.incluirRelatorioBtn.BackColor = System.Drawing.Color.Transparent;
+            this.incluirRelatorioBtn.FlatAppearance.BorderColor = System.Drawing.Color.Firebrick;
+            this.incluirRelatorioBtn.FlatAppearance.BorderSize = 0;
+            this.incluirRelatorioBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.incluirRelatorioBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Firebrick;
+            this.incluirRelatorioBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.incluirRelatorioBtn.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.incluirRelatorioBtn.Image = global::ControlaRelatorio.Properties.Resources.icons8_inserir_página_32;
+            this.incluirRelatorioBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.incluirRelatorioBtn.Location = new System.Drawing.Point(10, 111);
+            this.incluirRelatorioBtn.Name = "incluirRelatorioBtn";
+            this.incluirRelatorioBtn.Size = new System.Drawing.Size(40, 42);
+            this.incluirRelatorioBtn.TabIndex = 15;
+            this.incluirRelatorioBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.toolTip1.SetToolTip(this.incluirRelatorioBtn, "Incluir Relatorio");
+            this.incluirRelatorioBtn.UseVisualStyleBackColor = false;
+            this.incluirRelatorioBtn.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // MenuBtn
+            // 
+            this.MenuBtn.AutoSize = true;
+            this.MenuBtn.BackColor = System.Drawing.Color.Transparent;
+            this.MenuBtn.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.MenuBtn.FlatAppearance.BorderSize = 0;
+            this.MenuBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.MenuBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.MenuBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MenuBtn.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MenuBtn.Image = global::ControlaRelatorio.Properties.Resources.icons8_cardápio_32;
+            this.MenuBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.MenuBtn.Location = new System.Drawing.Point(3, 3);
+            this.MenuBtn.Name = "MenuBtn";
+            this.MenuBtn.Size = new System.Drawing.Size(49, 42);
+            this.MenuBtn.TabIndex = 14;
+            this.MenuBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.MenuBtn.UseVisualStyleBackColor = false;
+            this.MenuBtn.Click += new System.EventHandler(this.MenuBtn_Click);
+            // 
+            // button1
+            // 
+            this.button1.AutoSize = true;
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(127)))), ((int)(((byte)(255)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.Location = new System.Drawing.Point(-2, 593);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(202, 32);
+            this.button1.TabIndex = 28;
+            this.button1.Text = "Fazer Backup Banco de DAdos";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_3);
+            // 
             // FrmManutencaoRelatorio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(1436, 733);
+            this.ClientSize = new System.Drawing.Size(1364, 733);
             this.Controls.Add(this.QtdVencidoLbl);
             this.Controls.Add(this.abertoNaProgramacaoLbl);
             this.Controls.Add(this.dataGridPrevisaoAbertoProgramacao);
@@ -1002,7 +1055,6 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmManutencaoRelatorio_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmManutencaoRelatorio_KeyDown);
-            ((System.ComponentModel.ISupportInitialize)(this.relatorioBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPendenteNaoAtualizado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPendenteTempo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridCountAtendente)).EndInit();
@@ -1011,6 +1063,7 @@
             this.ePnl.ResumeLayout(false);
             this.ePnl.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPrevisaoAbertoProgramacao)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.relatorioBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.controlerelatorioDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1096,5 +1149,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column22;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column23;
         private System.Windows.Forms.Label QtdVencidoLbl;
+        private System.Windows.Forms.Timer timer1;
+        public System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -47,11 +47,8 @@ F:\Users\wagner.neves\Documents\GitHub\ControlaRelatorio\Services\bin\Debug\Syst
 F:\Users\wagner.neves\Documents\GitHub\ControlaRelatorio\Services\bin\Debug\System.Web.WebPages.Deployment.dll
 F:\Users\wagner.neves\Documents\GitHub\ControlaRelatorio\Services\bin\Debug\System.Web.WebPages.dll
 F:\Users\wagner.neves\Documents\GitHub\ControlaRelatorio\Services\bin\Debug\System.Web.WebPages.Razor.dll
-F:\Users\wagner.neves\Documents\GitHub\ControlaRelatorio\Services\bin\Debug\Google.Protobuf.dll
-F:\Users\wagner.neves\Documents\GitHub\ControlaRelatorio\Services\bin\Debug\BouncyCastle.Crypto.dll
 F:\Users\wagner.neves\Documents\GitHub\ControlaRelatorio\Services\bin\Debug\Chart.Mvc.pdb
 F:\Users\wagner.neves\Documents\GitHub\ControlaRelatorio\Services\bin\Debug\Chart.Mvc.xml
-F:\Users\wagner.neves\Documents\GitHub\ControlaRelatorio\Services\bin\Debug\MySql.Data.xml
 F:\Users\wagner.neves\Documents\GitHub\ControlaRelatorio\Services\bin\Debug\Newtonsoft.Json.xml
 F:\Users\wagner.neves\Documents\GitHub\ControlaRelatorio\Services\bin\Debug\System.Web.Helpers.xml
 F:\Users\wagner.neves\Documents\GitHub\ControlaRelatorio\Services\bin\Debug\System.Web.Mvc.xml
@@ -97,3 +94,5 @@ F:\Users\wagner.neves\Documents\ultimo\ControlaRelatorio\Services\obj\Debug\Serv
 F:\Users\wagner.neves\Documents\ultimo\ControlaRelatorio\Services\obj\Debug\Services.csproj.CopyComplete
 F:\Users\wagner.neves\Documents\ultimo\ControlaRelatorio\Services\obj\Debug\Services.dll
 F:\Users\wagner.neves\Documents\ultimo\ControlaRelatorio\Services\obj\Debug\Services.pdb
+F:\Users\wagner.neves\Documents\GitHub\ControlaRelatorio\Services\bin\Debug\MySql.Data.dll
+F:\Users\wagner.neves\Documents\GitHub\ControlaRelatorio\Services\bin\Debug\MySqlBackup.dll

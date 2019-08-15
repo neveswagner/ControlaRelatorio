@@ -1,4 +1,5 @@
-﻿using Services.Dao;
+﻿using MySql.Data.MySqlClient;
+using Services.Dao;
 using Services.Models;
 using System;
 using System.Collections.Generic;
@@ -6,10 +7,12 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Collections.Generic;
+
 
 namespace ControlaRelatorio.Forms
 {
@@ -22,6 +25,8 @@ namespace ControlaRelatorio.Forms
         DaoPrevisao daoprevisao = new DaoPrevisao();
 
         DaoInclusaoManutencaoRelatorio daoManutencaoRelarotio = new DaoInclusaoManutencaoRelatorio();
+
+        DaoGeraBkp daogerabkp = new DaoGeraBkp();
 
         FrmIncluirRelatorio frmIRel = (FrmIncluirRelatorio)Application.OpenForms["FrmIncluirRelatorio"];
 
@@ -38,6 +43,31 @@ namespace ControlaRelatorio.Forms
         public String TextoVersaoRelatorio = "Controle de Relatorio  -  Versao Mark IV";
         public String TextoVersaoPrevisao = "Controle de Previsao  -  Versao Mark IV";
 
+
+
+        private void FrmManutencaoRelatorio_Load(object sender, EventArgs e)
+        {
+
+            timer1.Start();
+            AtualizaGrids();
+
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            DateTime HorarioAtual = DateTime.Now;
+
+            if ((HorarioAtual.Hour == 17) && (HorarioAtual.Minute == 15) && (HorarioAtual.Second == 0))
+            {
+                daogerabkp.GeraBkpAutomatico();
+            }
+        }
+
+
+
+
+
         public FrmManutencaoRelatorio()
         {
             InitializeComponent();
@@ -51,11 +81,6 @@ namespace ControlaRelatorio.Forms
             QtdVencidoLbl.Text = Convert.ToString(daoprevisao.CountVencidos(p));
 
             daoprevisao.AbertoProgramacao(p);
-
-
-
-
-
 
         }
 
@@ -126,7 +151,9 @@ namespace ControlaRelatorio.Forms
             ePnl.Visible = false;
             dataGridPendenteTempo.Location = new Point(70, 56);
             AtualizadosPendenteValidacaoLbl.Location = new Point(76, 22);
-            DiasCountAtendenteTbx.Location = new Point(821, 22);
+            DiasCountAtendenteTbx.Location = new Point(1186, 22);
+            QuantidadeAtendenteLbl.Location = new Point(1178, 22);
+            dataGridCountAtendente.Location = new Point(1178, 56);
             //dataGridPendenteTempo.Location = new Point(606, 56);
             dataGridPendenteNaoAtualizado.Location = new Point(650, 56);
             PendenteAtualizacaoLbl.Location = new Point(650, 22);
@@ -192,18 +219,18 @@ namespace ControlaRelatorio.Forms
                 
                 else if (Dias <= -10 && Mes >= 0  )
                 {
-                    dataGridPrevisaoAbertoProgramacao.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(16, 123, 17);
+                    dataGridPrevisaoAbertoProgramacao.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(144, 238, 144);
                 }
 
                 else if ( Mes <= -1)
                 {
-                    dataGridPrevisaoAbertoProgramacao.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(16, 123, 17);
+                    dataGridPrevisaoAbertoProgramacao.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(144, 238, 144);
                 }
 
                 else if (Dias >= 0 && Mes >= 0)
                  {
-                     dataGridPrevisaoAbertoProgramacao.Rows[i].DefaultCellStyle.BackColor = Color.Red;
-                 }
+                     dataGridPrevisaoAbertoProgramacao.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(255, 99, 71);
+                }
                 
 
 
@@ -225,20 +252,23 @@ namespace ControlaRelatorio.Forms
                 {
                     dataGridPendenteTempo.Rows[i].DefaultCellStyle.BackColor = Color.Yellow;
                 }
-               
-                else if (Mes >= 1 )// && Dias <= -1 && Mes == 0)
-                {
-                    dataGridPendenteTempo.Rows[i].DefaultCellStyle.BackColor = Color.Red;
-                }
+
+       
                 else if (Dias >= 8)// && Dias <= -1 && Mes == 0)
                 {
-                    dataGridPendenteTempo.Rows[i].DefaultCellStyle.BackColor = Color.Red;
+                    dataGridPendenteTempo.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(255, 99, 71);
                 }
-                
+
                 else if (Dias >= 0 && Dias <= 3 && Mes == 0)
                 {
-                    dataGridPendenteTempo.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(16, 123, 17);
-                }             
+                    dataGridPendenteTempo.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(144, 238, 144);
+                }
+                else if (Dias >= 1)// &&  Mes >= 0)
+                {
+                   dataGridPendenteTempo.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(255, 99, 71);
+                }
+
+                
 
             }
 
@@ -331,6 +361,7 @@ namespace ControlaRelatorio.Forms
 
 
         }
+        
 
         private void incluirRelatorioBtn_Click(object sender, EventArgs e)
         {
@@ -341,13 +372,10 @@ namespace ControlaRelatorio.Forms
             AtualizaGrids();
         }
 
-        private void FrmManutencaoRelatorio_Load(object sender, EventArgs e)
-        {
 
-            AtualizaGrids();
+        
 
-
-        }
+        
 
         private void chart1_Click(object sender, EventArgs e)
         {
@@ -796,9 +824,42 @@ namespace ControlaRelatorio.Forms
         {
 
         }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+           
+
+            if (MessageBox.Show("Deseja relamente fazer Backup ?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                daogerabkp.GeraBkpAutomatico();
+         
+            }
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+
+            if (MessageBox.Show("Deseja relamente fazer Backup ?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                daogerabkp.GeraBkpAutomatico();
+
+            }
+        }
+
+        private void button1_Click_3(object sender, EventArgs e)
+        {
+
+            if (MessageBox.Show("Deseja relamente fazer Backup ?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                daogerabkp.GeraBkpAutomatico();
+
+            }
+        }
     }
+
+}
 
 
         
     
-}
+

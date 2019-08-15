@@ -75,6 +75,29 @@ namespace ControlaRelatorio.Forms
             if (e.KeyChar == 27)
 
                 this.Close();
+
+            if (e.KeyChar == (char)13)
+
+                SendKeys.Send("{TAB}");
+        }
+
+        private void FrmIncluirPrevisao_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FrmIncluirPrevisao_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+
+            {
+
+                case Keys.F10:
+                    incluirRelatorioBtn_Click(sender, e);
+                    break;
+
+
+            }
         }
     }
 
